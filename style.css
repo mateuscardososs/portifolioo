@@ -450,7 +450,7 @@ footer {
             width: 250px;
             height: auto;
             margin-left: 10px;
-            padding-top: 25px;
+            padding-top: 70px;
         }
         .cards div {
             display: flex;
@@ -472,7 +472,7 @@ footer {
         width: 250px;
         height: auto;
         margin-left: 10px;
-        padding-top: 25px;
+        padding-top: 70px;
     }
     .cards div {
         display: flex;
