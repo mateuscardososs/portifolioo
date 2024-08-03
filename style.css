@@ -16,6 +16,7 @@ html {
     height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding: 20px;
     background-color: #808080;
 }
 
@@ -445,35 +446,12 @@ footer {
     }
     
 }
-@media (max-width: 430px) {
-        .sobre-mim img {
-            width: 250px;
-            height: auto;
-            margin-left: 10px;
-            padding-top: 150px;
-        }
-        .cards div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .cards .info{
-            width: 100%;
-            height: 150px;
-        }
-        .cards .info h4{
-            grid-template-columns: 93px 150px;
-        }
-    }
-    
 
 @media (max-width: 391px) {
     .sobre-mim img {
         width: 250px;
         height: auto;
         margin-left: 10px;
-        padding-top: 150px;
     }
     .cards div {
         display: flex;
