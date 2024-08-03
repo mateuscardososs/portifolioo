@@ -450,6 +450,7 @@ footer {
             width: 250px;
             height: auto;
             margin-left: 10px;
+            padding-top: 25px;
         }
         .cards div {
             display: flex;
@@ -466,11 +467,12 @@ footer {
         }
     }
 
-@media (max-width: 391px) {
+@media (max-width: 390px) {
     .sobre-mim img {
         width: 250px;
         height: auto;
         margin-left: 10px;
+        padding-top: 25px;
     }
     .cards div {
         display: flex;
