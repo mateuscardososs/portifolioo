@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding: 20px;
+    background-color: #808080;
+}
+
+.content {
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1e1f;
+    position: fixed;
+}
+
+.home {
+    height: 35vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem; /* Ajuste o padding para garantir que o conteúdo não saia da tela */ 
+    padding-top: 5rem;
+}
+
+.home h1 {
+    color: #DCDCDC;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.3rem; /* Ajusta o espaçamento entre letras */
+}
+
+.home h2 {
+    color: rgb(177, 177, 177);
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.cards {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #808080;
+}
+
+.cards h2{
+    font-size: 5rem;
+    color: #DCDCDC;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+.itens-projeto{
+    width: 90%;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 6rem;
+}
+
+.itens-projeto .info {
+    background-color: #1C1C1C;
+    color: #DCDCDC;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.itens-projeto .info h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+.itens-projeto .info h4 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+.itens-projeto .info h4 strong {
+    color: orange;
+}
+
+.javaa {
+    color: red;
+}
+
+.html5 {
+    color: orangered;
+}
+.css {
+    color: blue;
+}
+.java {
+    color: yellow;
+}
+
+.itens-projeto img {
+    width: 100%;
+    height: 200px;
+}
+
+.contato {
+    width: 100vw;
+    background-color: #1f1e1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    padding-bottom: 4rem;
+}
+
+.contato h3 {
+    font-size: 6rem;
+    margin-bottom: 3rem;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+.contato-secao {
+    width: 650px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.contato-secao i {
+    margin-right: 1rem;
+}
+
+.contato-secao div {
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+
+.contato-secao div:hover {
+    color: #DCDCDC;
+}
+
+footer {
+    height: 25px;
+    background-color: #1f1e1f;
+    color: white;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario {
+    width: 100%;
+    background-color: #808080;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #DCDCDC;
+    margin-top: 2rem;
+}
+
+.formulario h3 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.3rem;
+    color: #DCDCDC;
+}
+
+.formulario-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #2a2a2a; /* Cor de fundo da caixa */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formulario label {
+    font-size: 1.6rem;
+}
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    background-color: #333;
+    color: #DCDCDC;
+}
+
+.formulario button {
+    padding: 1rem 2rem;
+    background-color: #ffa500;
+    color: #1f1e1f;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #e69500;
+}
+
+#formStatus {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: #ffa500;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 350px));
+    }
+    html {
+        font-size: 42%; /* Reduzi o tamanho da fonte */
+    }   
+    .contato-secao {
+        width: 100%; /* Largura completa */
+        padding: 1rem; /* Ajuste de padding */
+    }
+
+}
+
+@media (max-width: 431px) {
+    .home h2{
+        text-align: center;
+    }
+
+    .cards div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cards .info{
+        width: 100%;
+        height: 150px;
+    }
+    .cards .info h4{
+        grid-template-columns: 93px 150px;
+    }
+}
