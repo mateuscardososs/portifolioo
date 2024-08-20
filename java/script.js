@@ -7,3 +7,4 @@ menuToggle.addEventListener('click', () => {
     menuContent.classList.toggle('on', show);
     show = !show;
 });
+

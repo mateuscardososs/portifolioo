@@ -17,7 +17,7 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding: 20px;
-    background-color: #808080;
+    background-color: #1E201E;
 }
 
 .content {
@@ -26,7 +26,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f1e1f;
+    background-color: #3C3D37;
     position: fixed;
 }
 
@@ -46,7 +46,7 @@ html {
 .content .list-menu li a {
     display: block;
     padding: 2rem 2rem; 
-    color: #DCDCDC;
+    color: #ECDFCC;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.5rem;
@@ -64,43 +64,40 @@ html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw; /* Corrigido para 100vw */
+    width: 100vw; 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 0 5rem; /* Ajuste o padding para garantir que o conteúdo não saia da tela */
-}
-
-.sobre-mim img {
-    max-width: 500px; /* Ajusta a imagem para não sair da tela */
-    height: auto;
-    max-height: 500px; /* Limita a altura da imagem */
+    padding: 0 5rem; 
+    text-align: center;
 }
 
 .sobre-mim h1 {
-    color: #DCDCDC;
+    color: #ECDFCC;
     font-size: 4.5rem;
     text-transform: uppercase;
-    margin-bottom: 1rem;
     font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 0.3rem; /* Ajusta o espaçamento entre letras */
+    letter-spacing: 0.3rem; 
+    text-align: center;
 }
 
 .sobre-mim h2 {
-    color: rgb(177, 177, 177);
-    font-size: 3rem;
+    color: #ECDFCC;
+    font-size: 2rem;
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 3rem;
+    gap: -2em;
+    text-align: center;
 }
 
 .sobre-mim p {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 3rem;
-    color: #DCDCDC;
+    color: #ECDFCC;
     text-align: justify; 
     max-width: 100%; 
 }
@@ -110,9 +107,9 @@ html {
     height: 60px;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: rgb(51, 51, 51); 
+    background-color: #3C3D37; 
     border-radius: 10px;
-    color: #DCDCDC;
+    color: #ECDFCC;
     font-weight: 700;
     margin-top: 5rem;
     transition: all 400ms ease-in;
@@ -120,14 +117,72 @@ html {
 
 .btn button:hover {
     border: 1px solid black; ;
-    background-color: #4F4F4F;
+    background-color: #697565;
     color: #DCDCDC;
 }
 
 .btn {
-    width: 480px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
+}
+
+.habilidades {
+    width: 100vw;
+    height: 50vh;
+    padding: 4rem 0;
+    background-color: #1E201E;
+    text-align: center;
+}
+
+.habilidades h2 {
+    font-size: 5rem;
+    color: #ECDFCC;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem; 
+    padding: 2rem; 
+    background-color: #3C3D37;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 60%; 
+    margin: 0 auto; 
+}
+
+.skill-icon {
+    max-width: 80px; 
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.5rem; 
+
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+.skill-icon.animate {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .cards {
@@ -136,12 +191,12 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #808080;
+    background-color: #1E201E;
 }
 
 .cards h2{
     font-size: 5rem;
-    color: #DCDCDC;
+    color: #ECDFCC;
     text-transform: uppercase;
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.3rem;
@@ -159,8 +214,8 @@ html {
 }
 
 .itens-projeto .info {
-    background-color: #1C1C1C;
-    color: #DCDCDC;
+    background-color: #3C3D37;
+    color: #ECDFCC;
     border: none;
     display: flex;
     flex-direction: column;
@@ -175,6 +230,7 @@ html {
     text-transform: uppercase;
     margin-bottom: 1rem;
     text-decoration: underline;
+    color: #ECDFCC;
 }
 
 .itens-projeto .info h4 {
@@ -184,6 +240,7 @@ html {
         justify-content: center;
         gap: 10px;
         text-align: center;
+        color: #ECDFCC;
     }
 
 .itens-projeto .info h4 strong {
@@ -199,15 +256,18 @@ html {
 .java {
     color: yellow;
 }
+.javaa {
+    color: red;
+}
 
 .itens-projeto .ver {
     width: 150px;
     height: 40px;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: rgb(51, 51, 51); 
+    background-color: #3C3D37; 
     border-radius: 5px;
-    color: #DCDCDC;
+    color: #ECDFCC;
     font-weight: 700;
     margin-top: 1rem;
     transition: all 200ms ease-in;
@@ -215,8 +275,8 @@ html {
 
 .itens-projeto .ver:hover {
     border: 1px solid black; ;
-    background-color: #4F4F4F;
-    color: #DCDCDC;
+    background-color: #697565;
+    color: #ECDFCC;
 }
 
 .itens-projeto img {
@@ -224,50 +284,10 @@ html {
     height: 200px;
 }
 
-.contato {
-    width: 100vw;
-    background-color: #1f1e1f;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: white;
-    padding-bottom: 4rem;
-}
-
-.contato h3 {
-    font-size: 6rem;
-    margin-bottom: 3rem;
-    font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 0.3rem;
-}
-
-.contato-secao {
-    width: 650px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-.contato-secao i {
-    margin-right: 1rem;
-}
-
-.contato-secao div {
-    cursor: pointer;
-    transition: all 200ms ease-in;
-}
-
-.contato-secao div:hover {
-    color: #DCDCDC;
-}
-
 footer {
     height: 25px;
-    background-color: #1f1e1f;
-    color: white;
+    background-color: #1E201E;
+    color: #ECDFCC;
     font-size: 1.4rem;
     display: flex;
     align-items: center;
@@ -283,10 +303,6 @@ footer {
         justify-content: center;
         align-items: center;
         padding-left: 0;
-    }
-    .sobre-mim img {
-        width: 450px;
-        margin-left: -2px;
     }
     
 }
@@ -377,27 +393,12 @@ footer {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 
-    .contatos-secao {
-        display: block;
-        text-align: center;
-        font-size: 2rem;
-    }
-
-    .contatos-secao div {
-        margin: 1rem;
-    }
-
     .sobre-mim {
         flex-direction: column;
         padding: 2rem;
         gap: 2rem;
         justify-content: center;
         align-items: center;
-    }
-
-    .sobre-mim img {
-        width: 350px;
-        height: 350px;
     }
 
     .sobre-mim p {
@@ -413,9 +414,6 @@ footer {
     .sobre-mim h2 {
         text-align: center;
     }
-    .btn {
-        margin-left: 18rem;
-    }
 }
 @media (max-width: 600px) {
     .cards {
@@ -430,19 +428,6 @@ footer {
     .sobre-mim {
         flex-direction: column; 
         padding: 2rem; 
-    }
-
-    .sobre-mim img {
-        width: 300px; 
-    }
-
-    .btn {
-        display: none;
-    }
-    
-    .contato-secao {
-        width: 100%; 
-        padding: 1rem; 
     }
     
 }
@@ -469,6 +454,9 @@ footer {
 
     .content {
         height: 50px;
+}
+.btn button {
+    width: 150px;
 }
 }
 

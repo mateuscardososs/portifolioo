@@ -17,7 +17,7 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding: 20px;
-    background-color: #808080;
+    background-color: #1E201E;
 }
 
 .content {
@@ -26,7 +26,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f1e1f;
+    background-color: #3C3D37;
     position: fixed;
 }
 
@@ -45,7 +45,7 @@ html {
 }
 
 .home h1 {
-    color: #DCDCDC;
+    color: #ECDFCC;
     font-size: 4.5rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -54,7 +54,7 @@ html {
 }
 
 .home h2 {
-    color: rgb(177, 177, 177);
+    color: #ECDFCC;
     font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -67,12 +67,12 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #808080;
+    background-color: #1E201E;
 }
 
 .cards h2{
     font-size: 5rem;
-    color: #DCDCDC;
+    color: #ECDFCC;
     text-transform: uppercase;
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.3rem;
@@ -92,8 +92,8 @@ html {
 }
 
 .itens-projeto .info {
-    background-color: #1C1C1C;
-    color: #DCDCDC;
+    background-color: #3C3D37;
+    color: #ECDFCC;
     border: none;
     display: flex;
     flex-direction: column;
@@ -144,13 +144,13 @@ html {
 
 .contato {
     width: 100vw;
-    background-color: #1f1e1f;
+    background-color: #3C3D37;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    color: white;
+    color: #ECDFCC;
     padding-bottom: 4rem;
 }
 
@@ -179,13 +179,13 @@ html {
 }
 
 .contato-secao div:hover {
-    color: #DCDCDC;
+    color: #ECDFCC;
 }
 
 footer {
     height: 25px;
-    background-color: #1f1e1f;
-    color: white;
+    background-color: #3C3D37;
+    color: #ECDFCC;
     font-size: 1.4rem;
     display: flex;
     align-items: center;
@@ -194,13 +194,13 @@ footer {
 
 .formulario {
     width: 100%;
-    background-color: #808080;
+    background-color: #1E201E;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #DCDCDC;
+    color: #ECDFCC;
     margin-top: 2rem;
 }
 
@@ -209,17 +209,17 @@ footer {
     margin-bottom: 2rem;
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.3rem;
-    color: #DCDCDC;
+    color: #ECDFCC;
 }
 
 .formulario-container {
     width: 100%;
     max-width: 600px;
-    background-color: #2a2a2a; /* Cor de fundo da caixa */
+    background-color: #3C3D37; /* Cor de fundo da caixa */
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid #444;
+    box-shadow: 0 4px 8px #697565;
+    border: 1px solid #ECDFCC;
 }
 
 .formulario form {
@@ -244,7 +244,7 @@ footer {
 
 .formulario button {
     padding: 1rem 2rem;
-    background-color: #ffa500;
+    background-color: #697565;
     color: #1f1e1f;
     border: none;
     border-radius: 5px;
@@ -254,13 +254,13 @@ footer {
 }
 
 .formulario button:hover {
-    background-color: #e69500;
+    background-color: #ECDFCC;
 }
 
 #formStatus {
     margin-top: 1rem;
     font-size: 1.6rem;
-    color: #ffa500;
+    color: #ECDFCC;
     text-align: center;
 }
 
@@ -280,6 +280,9 @@ footer {
     .contato-secao {
         width: 100%; /* Largura completa */
         padding: 1rem; /* Ajuste de padding */
+    }
+    .home h2 {
+        text-align: center;
     }
 
 }
