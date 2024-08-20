@@ -458,6 +458,13 @@ footer {
 .btn button {
     width: 150px;
 }
+.skill-icon {
+    max-width: 50px; 
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.5rem; 
+
+}
 }
 
 @media (max-width: 391px) {
