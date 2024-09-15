@@ -68,4 +68,25 @@ timelineWrapper.addEventListener('mousemove', (e) => {
   timelineWrapper.scrollLeft = scrollLeft - walk;
 });
 
+if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+    const projetos = document.querySelectorAll('.mais-projetos');
+
+    projetos.forEach(projeto => {
+        projeto.addEventListener('touchstart', function() {
+            const info = this.querySelector('.info');
+            const img = this.querySelector('img');
+            
+            info.style.opacity = '1';
+            img.style.opacity = '0.5';
+        });
+
+        projeto.addEventListener('touchend', function() {
+            const info = this.querySelector('.info');
+            const img = this.querySelector('img');
+            
+            info.style.opacity = '0';
+            img.style.opacity = '1';
+        });
+    });
+}
 
