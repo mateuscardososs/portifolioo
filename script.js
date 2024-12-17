@@ -1,15 +1,22 @@
-let show = true;
-const menuContent = document.querySelector('.content');
-const menuToggle = menuContent.querySelector('.menu-toggle');
+document.addEventListener('DOMContentLoaded', () => {
+    let show = true;
 
-menuToggle.addEventListener('click', () => {
-    document.body.style.overflow = show ? 'hidden' : 'initial';
-    menuContent.classList.toggle('on', show);
-    show = !show;
+    // Delegação de evento no documento
+    document.body.addEventListener('click', (e) => {
+        const menuToggle = e.target.closest('.menu-toggle');
+        const menuContent = document.querySelector('.content');
+
+        if (menuToggle && menuContent) {
+            document.body.style.overflow = show ? 'hidden' : 'initial';
+            menuContent.classList.toggle('on', show);
+            show = !show;
+        }
+    });
 });
 
+
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previne o comportamento padrão do formulário
+    event.preventDefault(); 
 
     const form = event.target;
     const formData = new FormData(form);
@@ -68,25 +75,4 @@ timelineWrapper.addEventListener('mousemove', (e) => {
   timelineWrapper.scrollLeft = scrollLeft - walk;
 });
 
-if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-    const projetos = document.querySelectorAll('.mais-projetos');
-
-    projetos.forEach(projeto => {
-        projeto.addEventListener('touchstart', function() {
-            const info = this.querySelector('.info');
-            const img = this.querySelector('img');
-            
-            info.style.opacity = '1';
-            img.style.opacity = '0.5';
-        });
-
-        projeto.addEventListener('touchend', function() {
-            const info = this.querySelector('.info');
-            const img = this.querySelector('img');
-            
-            info.style.opacity = '0';
-            img.style.opacity = '1';
-        });
-    });
-}
 
