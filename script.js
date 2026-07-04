@@ -37,6 +37,7 @@ function initMobileMenu() {
 
     const closeMenu = () => {
         button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Abrir menu');
         menu.classList.remove('is-open');
         button.innerHTML = '<i data-lucide="menu"></i>';
         if (window.lucide) {
@@ -47,6 +48,7 @@ function initMobileMenu() {
     button.addEventListener('click', () => {
         const isOpen = button.getAttribute('aria-expanded') === 'true';
         button.setAttribute('aria-expanded', String(!isOpen));
+        button.setAttribute('aria-label', !isOpen ? 'Fechar menu' : 'Abrir menu');
         menu.classList.toggle('is-open', !isOpen);
         button.innerHTML = !isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
         if (window.lucide) {
@@ -67,7 +69,7 @@ function initMobileMenu() {
 
 function initScrollReveal() {
     const revealItems = document.querySelectorAll(
-        '.section-heading, .text-block, .profile-panel, .stack-card, .tech-item, .project-card, .experience-card, .contact-links a'
+        '.section-heading, .text-block, .profile-panel, .stack-card, .project-card, .experience-card, .contact-links a'
     );
 
     if (!revealItems.length) {
