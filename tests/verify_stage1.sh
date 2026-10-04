@@ -41,6 +41,16 @@ assert_contains index.html 'github.com/mateuscardososs/Controle-de-acesso'
 assert_contains index.html 'Qlik Monitoring Service'
 assert_contains index.html 'github.com/mateuscardososs/qlik-monitoring-service'
 
+assert_contains index.html 'mailto:mateus7.cardoso@hotmail.com'
+assert_contains index.html '<strong>mateus7.cardoso@hotmail.com</strong>'
+assert_contains index.html 'https://www.linkedin.com/in/mateus-cardosos'
+assert_contains index.html '<strong>/in/mateus-cardosos</strong>'
+assert_not_contains index.html 'mateus7.cardosos@hotmail.com'
+assert_not_contains index.html 'mateus-cardoso-294a86238'
+
+assert_contains README.md 'mateus7.cardoso@hotmail.com'
+assert_contains README.md 'https://www.linkedin.com/in/mateus-cardosos'
+
 whatsapp_line="$(grep -n 'wa.me/' index.html | cut -d: -f1)"
 contact_line="$(grep -n 'id="contato"' index.html | cut -d: -f1)"
 
