@@ -52,9 +52,10 @@ assert_contains README.md 'mateus7.cardoso@hotmail.com'
 assert_contains README.md 'https://www.linkedin.com/in/mateus-cardosos'
 
 whatsapp_line="$(grep -n 'wa.me/' index.html | cut -d: -f1)"
+whatsapp_count="$(grep -c 'wa.me/' index.html)"
 contact_line="$(grep -n 'id="contato"' index.html | cut -d: -f1)"
 
-if [[ -z "$whatsapp_line" || -z "$contact_line" || "$whatsapp_line" -le "$contact_line" ]]; then
+if [[ "$whatsapp_count" -ne 1 || -z "$whatsapp_line" || -z "$contact_line" || "$whatsapp_line" -le "$contact_line" ]]; then
     printf 'FAIL: WhatsApp must remain only in the contact section\n' >&2
     exit 1
 fi
