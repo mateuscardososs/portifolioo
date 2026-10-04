@@ -1,1 +1,28 @@
-.claude
+# Local assistant tooling
+.claude/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated builds
+node_modules/
+dist/
+build/
+coverage/
+
+# Runtime data and generated output
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+output/
+tmp/
+temp/
+*.tmp
+
+# Operating system and editor files
+.DS_Store
+*.swp
