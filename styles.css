@@ -375,6 +375,12 @@ dd {
     border-bottom: 1px solid var(--border);
 }
 
+#stack {
+    display: grid;
+    min-height: calc(100svh - var(--header-height));
+    align-items: center;
+}
+
 .section-grid {
     display: grid;
     grid-template-columns: minmax(240px, 0.88fr) minmax(0, 2fr);
@@ -699,7 +705,8 @@ dd {
     margin: 38px 0 42px;
     font-size: clamp(2.1rem, 6.4vw, 5.5rem);
     letter-spacing: -0.055em;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .contact-section h2 a {

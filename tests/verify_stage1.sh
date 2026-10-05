@@ -42,7 +42,7 @@ assert_contains index.html 'Também atuo em uma solução interna de monitoramen
 assert_not_contains index.html 'github.com/mateuscardososs/qlik-monitoring-service'
 
 assert_contains index.html 'mailto:mateus7.cardoso@hotmail.com'
-assert_contains index.html '>mateus7.cardoso@hotmail.com</a>'
+assert_contains index.html '>mateus7.cardoso@<wbr>hotmail.com</a>'
 assert_contains index.html 'https://www.linkedin.com/in/mateus-cardosos'
 assert_contains index.html '<strong>/in/mateus-cardosos</strong>'
 assert_not_contains index.html 'mateus7.cardosos@hotmail.com'

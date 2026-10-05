@@ -33,7 +33,7 @@ function positionCaptureTarget() {
             window.requestAnimationFrame(() => {
                 const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
                 const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-                window.scrollTo({ top: Math.max(0, targetTop), behavior: 'auto' });
+                window.scrollTo({ top: Math.max(0, targetTop), left: 0, behavior: 'auto' });
             });
         });
     };
