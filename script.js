@@ -7,12 +7,12 @@ if (captureMode) {
 
 window.addEventListener('DOMContentLoaded', () => {
     setCurrentYear();
+    initRecifeClock();
     initHeader();
     initMobileMenu();
     initActiveNavigation();
     initCopyEmail();
     initScrollReveal();
-    initHeroGlow();
     if (captureMode && window.location.hash) {
         document.querySelector(window.location.hash)?.scrollIntoView({ block: 'start' });
     }
@@ -23,6 +23,43 @@ function setCurrentYear() {
     if (year) {
         year.textContent = new Date().getFullYear();
     }
+}
+
+function initRecifeClock() {
+    const clock = document.getElementById('recife-time');
+    if (!clock) {
+        return;
+    }
+
+    const formatter = new Intl.DateTimeFormat('pt-BR', {
+        timeZone: 'America/Recife',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+    });
+    let timer;
+
+    const render = () => {
+        const now = new Date();
+        clock.textContent = formatter.format(now);
+        clock.dateTime = now.toISOString();
+    };
+
+    const start = () => {
+        window.clearInterval(timer);
+        render();
+        timer = window.setInterval(render, 1000);
+    };
+
+    start();
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            window.clearInterval(timer);
+        } else {
+            start();
+        }
+    });
 }
 
 function initHeader() {
@@ -160,24 +197,4 @@ function initScrollReveal() {
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
     elements.forEach((element) => observer.observe(element));
-}
-
-function initHeroGlow() {
-    const panel = document.querySelector('.status-panel');
-    if (!panel || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-    }
-
-    panel.addEventListener('pointermove', (event) => {
-        const bounds = panel.getBoundingClientRect();
-        const x = ((event.clientX - bounds.left) / bounds.width) * 100;
-        const y = ((event.clientY - bounds.top) / bounds.height) * 100;
-        panel.style.setProperty('--glow-x', `${x.toFixed(1)}%`);
-        panel.style.setProperty('--glow-y', `${y.toFixed(1)}%`);
-    });
-
-    panel.addEventListener('pointerleave', () => {
-        panel.style.removeProperty('--glow-x');
-        panel.style.removeProperty('--glow-y');
-    });
 }
