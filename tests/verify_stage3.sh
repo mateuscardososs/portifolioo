@@ -110,16 +110,20 @@ assert_contains index.html 'href="assets/fonts/fonts.css"'
 assert_contains index.html 'href="assets/fonts/archivo-latin-wght-normal.woff2"'
 assert_contains index.html 'href="assets/fonts/source-sans-3-latin-wght-normal.woff2"'
 assert_count index.html 'rel="preload" as="font"' 2
-for font_file in assets/fonts/archivo-latin-wght-normal.woff2 assets/fonts/source-sans-3-latin-wght-normal.woff2 assets/fonts/ibm-plex-mono-latin-wght-normal.woff2; do
+for font_file in \
+    assets/fonts/archivo-latin-wght-normal.woff2 \
+    assets/fonts/source-sans-3-latin-wght-normal.woff2 \
+    assets/fonts/ibm-plex-mono-latin-400-normal.woff2 \
+    assets/fonts/ibm-plex-mono-latin-500-normal.woff2; do
     [[ -s "$font_file" ]] || fail "$font_file must exist and not be empty"
 done
 assert_contains assets/fonts/fonts.css 'font-family: "Archivo"'
 assert_contains assets/fonts/fonts.css 'font-family: "Source Sans 3"'
 assert_contains assets/fonts/fonts.css 'font-family: "IBM Plex Mono"'
-assert_count assets/fonts/fonts.css 'font-display: swap' 3
+assert_count assets/fonts/fonts.css 'font-display: swap' 4
 assert_count assets/fonts/fonts.css 'size-adjust:' 3
 assert_count assets/fonts/fonts.css 'ascent-override:' 3
-assert_count assets/fonts/fonts.css 'unicode-range: U+0000-00FF' 3
+assert_count assets/fonts/fonts.css 'unicode-range: U+0000-00FF' 4
 for license_file in assets/fonts/licenses/Archivo-OFL.txt assets/fonts/licenses/Source-Sans-3-OFL.txt assets/fonts/licenses/IBM-Plex-Mono-OFL.txt; do
     assert_contains "$license_file" 'SIL OPEN FONT LICENSE Version 1.1'
 done
