@@ -74,9 +74,41 @@ for token in \
     assert_contains styles.css "$token"
 done
 
-assert_contains index.html 'family=Archivo'
-assert_contains index.html 'family=Azeret+Mono'
-assert_contains index.html 'family=Source+Sans+3'
+assert_not_contains index.html 'fonts.googleapis.com'
+assert_not_contains index.html 'fonts.gstatic.com'
+assert_contains index.html 'href="assets/fonts/fonts.css"'
+assert_contains index.html 'href="assets/fonts/archivo-latin-wght-normal.woff2"'
+assert_contains index.html 'href="assets/fonts/source-sans-3-latin-wght-normal.woff2"'
+assert_count index.html 'rel="preload" as="font"' 2
+
+for font_file in \
+    assets/fonts/archivo-latin-wght-normal.woff2 \
+    assets/fonts/source-sans-3-latin-wght-normal.woff2 \
+    assets/fonts/azeret-mono-latin-wght-normal.woff2; do
+    [[ -s "$font_file" ]] || fail "$font_file must exist and not be empty"
+done
+
+assert_contains assets/fonts/fonts.css 'font-family: "Archivo"'
+assert_contains assets/fonts/fonts.css 'font-weight: 700 800'
+assert_contains assets/fonts/fonts.css 'font-family: "Source Sans 3"'
+assert_contains assets/fonts/fonts.css 'font-weight: 400 700'
+assert_contains assets/fonts/fonts.css 'font-family: "Azeret Mono"'
+assert_contains assets/fonts/fonts.css 'font-weight: 500 600'
+assert_count assets/fonts/fonts.css 'font-display: swap' 3
+assert_count assets/fonts/fonts.css 'size-adjust:' 3
+assert_count assets/fonts/fonts.css 'ascent-override:' 3
+assert_count assets/fonts/fonts.css 'unicode-range: U+0000-00FF' 3
+
+for license_file in \
+    assets/fonts/licenses/Archivo-OFL.txt \
+    assets/fonts/licenses/Source-Sans-3-OFL.txt \
+    assets/fonts/licenses/Azeret-Mono-OFL.txt; do
+    assert_contains "$license_file" 'SIL OPEN FONT LICENSE Version 1.1'
+done
+
+assert_contains styles.css '"Archivo Fallback"'
+assert_contains styles.css '"Source Sans 3 Fallback"'
+assert_contains styles.css '"Azeret Mono Fallback"'
 assert_contains styles.css 'grid-template-columns: repeat(12, minmax(0, 1fr))'
 assert_contains styles.css '@media (prefers-reduced-motion: reduce)'
 assert_contains styles.css ':focus-visible'

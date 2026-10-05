@@ -7,9 +7,9 @@
     --text-muted: #A8B2BD;
     --accent: #5BB8FF;
     --accent-ink: #06111A;
-    --font-display: "Archivo", system-ui, sans-serif;
-    --font-body: "Source Sans 3", system-ui, sans-serif;
-    --font-mono: "Azeret Mono", ui-monospace, monospace;
+    --font-display: "Archivo", "Archivo Fallback", system-ui, sans-serif;
+    --font-body: "Source Sans 3", "Source Sans 3 Fallback", system-ui, sans-serif;
+    --font-mono: "Azeret Mono", "Azeret Mono Fallback", ui-monospace, monospace;
     --radius: 6px;
     --content-width: 1140px;
     --header-height: 68px;
