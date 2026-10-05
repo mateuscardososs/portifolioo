@@ -1,6 +1,6 @@
 # Portfólio — Mateus Cardoso
 
-Portfólio profissional com foco em desenvolvimento backend Java, APIs REST, integrações e dados.
+Portfólio profissional de Backend Developer com Java e Python, focado em APIs, integrações, dados e IA aplicada.
 
 ## Tecnologias do site
 
