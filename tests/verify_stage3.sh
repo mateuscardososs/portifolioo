@@ -43,6 +43,34 @@ assert_section_order
 
 assert_contains index.html 'class="skip-link"'
 assert_contains index.html 'href="#case-controle"'
+assert_contains index.html '<link rel="canonical" href="https://portifolioo-opal.vercel.app/">'
+assert_contains index.html '<meta property="og:url" content="https://portifolioo-opal.vercel.app/">'
+assert_contains index.html '<meta property="og:image" content="https://portifolioo-opal.vercel.app/og-image.png">'
+assert_contains index.html '<meta property="og:image:type" content="image/png">'
+assert_contains index.html '<meta property="og:image:width" content="1200">'
+assert_contains index.html '<meta property="og:image:height" content="630">'
+assert_contains index.html '<meta property="og:image:alt" content="Mateus Cardoso — Desenvolvedor Backend Java">'
+[[ -f og-image.png ]] || fail 'og-image.png must exist'
+
+read -r og_width og_height < <(node -e '
+    const image = require("fs").readFileSync("og-image.png");
+    process.stdout.write(`${image.readUInt32BE(16)} ${image.readUInt32BE(20)}\n`);
+')
+[[ "$og_width" -eq 1200 ]] || fail "og-image.png width must be 1200px, found ${og_width:-unknown}"
+[[ "$og_height" -eq 630 ]] || fail "og-image.png height must be 630px, found ${og_height:-unknown}"
+og_bytes="$(node -e 'process.stdout.write(String(require("fs").statSync("og-image.png").size))')"
+[[ "$og_bytes" -lt 307200 ]] || fail "og-image.png must be smaller than 300 KiB, found $og_bytes bytes"
+
+[[ -f tools/og-image.html ]] || fail 'tools/og-image.html must exist'
+[[ -f scripts/generate-og-image.mjs ]] || fail 'scripts/generate-og-image.mjs must exist'
+assert_count tools/og-image.html 'Mateus Cardoso' 1
+assert_count tools/og-image.html 'Desenvolvedor Backend Java' 1
+assert_contains tools/og-image.html '../assets/fonts/fonts.css'
+assert_not_contains tools/og-image.html 'http://'
+assert_not_contains tools/og-image.html 'https://'
+assert_contains scripts/generate-og-image.mjs '--window-size=1200,630'
+assert_contains scripts/generate-og-image.mjs 'og-image.png'
+
 assert_contains index.html 'Desenvolvedor Backend Java'
 assert_contains index.html 'mais de 250 testes automatizados'
 assert_contains index.html 'Projeto desenvolvido individualmente.'
