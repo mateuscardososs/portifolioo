@@ -50,26 +50,19 @@
 
     <main id="conteudo">
         <section class="hero" id="inicio" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div class="hero-copy" data-reveal>
-                    <p class="eyebrow"><span aria-hidden="true"></span>BACKEND DEVELOPER</p>
-                    <p class="hero-meta">JAVA E PYTHON · RECIFE, BRASIL</p>
-                    <h1 id="hero-title">Construo APIs e serviços que conectam regras de negócio, dados e operações.</h1>
-                    <p class="hero-intro">Java e Python no backend, com foco em APIs, integrações, dados e IA aplicada.</p>
-                    <div class="hero-actions" aria-label="Ações principais">
-                        <a class="button button-primary" href="#projetos">Ver case técnico <span aria-hidden="true">→</span></a>
-                        <a class="button button-secondary" href="curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer">Currículo <span aria-hidden="true">↗</span></a>
-                    </div>
+            <div class="container hero-profile" data-reveal>
+                <figure class="hero-portrait">
+                    <img src="img/face2.png" width="200" height="200" alt="Retrato de Mateus Cardoso">
+                    <figcaption aria-hidden="true">{ }</figcaption>
+                </figure>
+                <p class="hero-meta">BACKEND DEVELOPER · RECIFE, BRASIL</p>
+                <h1 id="hero-title">Mateus Cardoso</h1>
+                <p class="hero-role">Backend Developer | Java &amp; Python</p>
+                <p class="hero-intro">Desenvolvo APIs, integrações e sistemas orientados a dados, com IA aplicada quando ela melhora de fato a operação.</p>
+                <div class="hero-actions" aria-label="Ações principais">
+                    <a class="button button-primary" href="#projetos">Ver projetos <span aria-hidden="true">→</span></a>
+                    <a class="button button-secondary" href="curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer">Baixar currículo <span aria-hidden="true">↗</span></a>
                 </div>
-
-                <dl class="facts-table" data-reveal aria-label="Resumo profissional">
-                    <div><dt>Base</dt><dd>Recife, Brasil</dd></div>
-                    <div><dt>Fuso</dt><dd>GMT-3</dd></div>
-                    <div><dt>Foco</dt><dd><span>APIs · Integrações</span><span>Dados · IA aplicada</span></dd></div>
-                    <div><dt>Stack</dt><dd>Java · Python · SQL</dd></div>
-                    <div><dt>Atual</dt><dd>Estágio de Desenvolvedor de Software · TRF5</dd></div>
-                    <div><dt>Prova</dt><dd>250+ testes automatizados no case principal</dd></div>
-                </dl>
             </div>
         </section>
 
@@ -77,35 +70,17 @@
             <div class="container section-grid">
                 <header class="section-heading" data-reveal>
                     <p class="section-index">01 / Sobre</p>
-                    <h2 id="sobre-title">Como construo</h2>
+                    <h2 id="sobre-title">Backend que entende a operação inteira.</h2>
                 </header>
-                <div class="section-content" data-reveal>
-                    <div class="section-intro">
-                        <p>Desenvolvo soluções backend com Java e Python para transformar regras de negócio em APIs, integrações e fluxos de dados.</p>
-                        <p>Também aplico automação e IA em ferramentas internas que apoiam serviços e operações.</p>
-                    </div>
-                    <ol class="principles-grid">
-                        <li>
-                            <span>01</span>
-                            <h3>Testável sem hardware</h3>
-                            <p>Provider fake como padrão de desenvolvimento e uma suíte com 279 testes no total.</p>
-                        </li>
-                        <li>
-                            <span>02</span>
-                            <h3>Banco com histórico</h3>
-                            <p>Migrações versionadas com Flyway mantêm a evolução do esquema explícita.</p>
-                        </li>
-                        <li>
-                            <span>03</span>
-                            <h3>Permissões explícitas</h3>
-                            <p>Autenticação com JWT e autorização baseada em papéis com RBAC.</p>
-                        </li>
-                        <li>
-                            <span>04</span>
-                            <h3>Fluxo principal livre</h3>
-                            <p>RabbitMQ processa sincronizações e WebSocket atualiza a interface em tempo real.</p>
-                        </li>
-                    </ol>
+                <div class="about-copy" data-reveal>
+                    <p>Sou Mateus Cardoso, Backend Developer em Recife. Trabalho com Java, Python e SQL para construir APIs, integrações e fluxos de dados que transformam processos manuais em sistemas confiáveis.</p>
+                    <p>No TRF5, entre março de 2025 e agosto de 2026, participei do desenvolvimento de soluções internas, automações e iniciativas de IA. Fora dele, desenvolvo produtos completos — de controle de acesso usado em evento real a gestão comercial com IA local e consulta inteligente de documentos.</p>
+                    <p>Meu foco é backend, mas penso no fluxo ponta a ponta: regra de negócio, banco de dados, segurança, testes, operação e a experiência de quem usa o sistema.</p>
+                    <ul class="about-focus" aria-label="Áreas de atuação">
+                        <li>Java + Python</li>
+                        <li>APIs + dados</li>
+                        <li>IA local</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -115,87 +90,83 @@
                 <div class="section-grid section-grid-heading">
                     <header class="section-heading" data-reveal>
                         <p class="section-index">02 / Projetos</p>
-                        <h2 id="projetos-title">Case técnico</h2>
+                        <h2 id="projetos-title">Trabalhos selecionados</h2>
                     </header>
-                    <p class="section-summary" data-reveal>Um sistema completo como prova de arquitetura, integração e entrega para uso real.</p>
+                    <p class="section-summary" data-reveal>Sistemas completos, automação e IA aplicada a problemas operacionais.</p>
                 </div>
 
-                <article class="project-row" data-reveal>
-                    <span class="row-number">01</span>
-                    <div class="project-identity">
-                        <h3>Controle de Acesso</h3>
-                        <p>Sistema full stack · 2026</p>
-                    </div>
-                    <div class="project-summary">
-                        <p>Sistema para gerenciar colaboradores, convidados, áreas, dispositivos e eventos de acesso em uma operação de grande porte.</p>
-                        <ul class="technology-list" aria-label="Tecnologias do Controle de Acesso">
-                            <li>Java 21</li><li>Spring Boot 3</li><li>PostgreSQL</li><li>RabbitMQ</li><li>WebSocket</li><li>Next.js</li>
-                        </ul>
-                        <p class="proof-line">Desenvolvido individualmente · usado em evento de grande porte · 250+ testes automatizados</p>
-                    </div>
-                    <a class="row-arrow" href="https://github.com/mateuscardososs/Controle-de-acesso" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do Controle de Acesso">↗</a>
-                </article>
-
-                <div class="case-detail" aria-label="Detalhes técnicos do Controle de Acesso">
-                    <article class="case-row" data-reveal>
-                        <p class="case-label">Contexto</p>
-                        <div>
-                            <h3>Uma operação com pessoas, áreas e dispositivos</h3>
-                            <p>O projeto nasceu para organizar cadastros e permissões de acesso, acompanhar dispositivos e registrar eventos em uma operação real.</p>
-                            <p><strong>Projeto desenvolvido individualmente.</strong> Modelei os dados, construí backend e interfaces e implementei autenticação, gestão de pessoas, fluxo de visitantes, processamento de fotos, mensageria e atualização em tempo real.</p>
+                <div class="projects-list">
+                    <article class="project-row project-featured" data-reveal>
+                        <span class="row-number">01</span>
+                        <div class="project-identity">
+                            <h3>Controle de Acesso</h3>
+                            <p>Case principal · Java</p>
                         </div>
-                    </article>
-
-                    <article class="case-row" data-reveal>
-                        <p class="case-label">Decisão técnica</p>
-                        <div>
-                            <h3>Integração desacoplada do fluxo principal</h3>
-                            <p>A integração com as controladoras fica atrás de uma abstração de provider. Assim, o desenvolvimento pode usar um provider simulado sem hardware, enquanto a operação habilita o provider real por configuração.</p>
-                            <p>RabbitMQ desacopla a sincronização do fluxo principal, e WebSocket atualiza a interface. A separação adiciona componentes à execução, mas evita bloquear cadastros durante a comunicação com dispositivos.</p>
-                        </div>
-                    </article>
-
-                    <article class="case-row" data-reveal>
-                        <p class="case-label">Evidência</p>
-                        <div>
-                            <h3>O que pode ser validado no repositório</h3>
-                            <ul class="evidence-register">
-                                <li>
-                                    <div><strong>Testes automatizados</strong><p>279 testes no total; 260 executados localmente; 19 testes de integração dependem de Docker.</p></div>
-                                    <span><a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/pom.xml" target="_blank" rel="noopener noreferrer">Configuração Maven ↗</a><a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/src/test/java/br/com/sport/accesscontrol/common/CpfValidatorTests.java" target="_blank" rel="noopener noreferrer">Exemplo de teste ↗</a></span>
-                                </li>
-                                <li>
-                                    <div><strong>Migrações versionadas</strong><p>O esquema relacional evolui por arquivos Flyway mantidos junto ao código.</p></div>
-                                    <a href="https://github.com/mateuscardososs/Controle-de-acesso/tree/main/src/main/resources/db/migration" target="_blank" rel="noopener noreferrer">Ver migrações ↗</a>
-                                </li>
-                                <li>
-                                    <div><strong>Provider configurável</strong><p>O modo fake permanece como padrão de desenvolvimento e é coberto por teste dedicado.</p></div>
-                                    <a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/src/test/java/br/com/sport/accesscontrol/integration/intelbras/provider/IntelbrasProviderModeTests.java" target="_blank" rel="noopener noreferrer">Ver teste do provider ↗</a>
-                                </li>
-                                <li>
-                                    <div><strong>Execução conteinerizada</strong><p>O backend possui uma imagem de execução reproduzível.</p></div>
-                                    <a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/Dockerfile" target="_blank" rel="noopener noreferrer">Ver Dockerfile ↗</a>
-                                </li>
+                        <div class="project-summary">
+                            <p>Sistema full stack para gerenciar colaboradores, convidados, áreas, dispositivos e eventos de acesso em uma operação de grande porte.</p>
+                            <ul class="technology-list" aria-label="Tecnologias do Controle de Acesso">
+                                <li>Java 21</li><li>Spring Boot 3</li><li>PostgreSQL</li><li>RabbitMQ</li><li>WebSocket</li><li>Next.js</li>
                             </ul>
-                            <p class="evidence-note">Testes executáveis localmente com Maven; workflow público de CI ainda não configurado.</p>
+                            <div class="project-proof">
+                                <p><strong>Projeto desenvolvido individualmente.</strong> Sistema usado em evento de grande porte.</p>
+                                <p>279 testes no total: 260 executados localmente e 19 testes de integração dependentes de Docker.</p>
+                                <p>Provider real validado em controladora Intelbras via CGI com autenticação Digest. Modo fake mantido como padrão de desenvolvimento. A compatibilidade depende do modelo e do firmware da controladora.</p>
+                            </div>
+                            <ul class="evidence-links" aria-label="Evidências do Controle de Acesso">
+                                <li><a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/pom.xml" target="_blank" rel="noopener noreferrer">Maven ↗</a></li>
+                                <li><a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/src/test/java/br/com/sport/accesscontrol/common/CpfValidatorTests.java" target="_blank" rel="noopener noreferrer">Teste ↗</a></li>
+                                <li><a href="https://github.com/mateuscardososs/Controle-de-acesso/tree/main/src/main/resources/db/migration" target="_blank" rel="noopener noreferrer">Flyway ↗</a></li>
+                                <li><a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/src/test/java/br/com/sport/accesscontrol/integration/intelbras/provider/IntelbrasProviderModeTests.java" target="_blank" rel="noopener noreferrer">Provider ↗</a></li>
+                                <li><a href="https://github.com/mateuscardososs/Controle-de-acesso/blob/main/Dockerfile" target="_blank" rel="noopener noreferrer">Dockerfile ↗</a></li>
+                            </ul>
                         </div>
+                        <a class="row-arrow" href="https://github.com/mateuscardososs/Controle-de-acesso" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do Controle de Acesso">↗</a>
                     </article>
 
-                    <article class="case-row" data-reveal>
-                        <p class="case-label">Resultado</p>
-                        <div>
-                            <h3>Entregue para uso real</h3>
-                            <p>O sistema foi utilizado em um evento real para apoiar o cadastro e a gestão operacional de acessos.</p>
+                    <article class="project-row" data-reveal>
+                        <span class="row-number">02</span>
+                        <div class="project-identity">
+                            <h3>Proposta Comercial</h3>
+                            <p>Sistema operacional · Python + IA local</p>
                         </div>
+                        <div class="project-summary">
+                            <p>Sistema para propostas, clientes, tarefas, serviços, financeiro e acompanhamento de mensagens, com assistente local por texto e voz.</p>
+                            <ul class="technology-list" aria-label="Tecnologias da Proposta Comercial">
+                                <li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>PostgreSQL</li><li>Ollama</li><li>faster-whisper</li><li>Piper</li>
+                            </ul>
+                        </div>
+                        <a class="row-arrow" href="https://github.com/mateuscardososs/Proposta.comercial" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório da Proposta Comercial">↗</a>
                     </article>
 
-                    <article class="case-row" data-reveal>
-                        <p class="case-label">Intelbras</p>
-                        <div>
-                            <h3>Estado da integração</h3>
-                            <p>Provider real validado em controladora Intelbras via CGI com autenticação Digest.<br>Modo fake mantido como padrão de desenvolvimento.<br>A compatibilidade depende do modelo e do firmware da controladora.</p>
-                            <a class="inline-link" href="https://github.com/mateuscardososs/Controle-de-acesso" target="_blank" rel="noopener noreferrer">Abrir repositório completo ↗</a>
+                    <article class="project-row" data-reveal>
+                        <span class="row-number">03</span>
+                        <div class="project-identity">
+                            <h3>AcervoIA</h3>
+                            <p>Em desenvolvimento · FastAPI + busca semântica</p>
                         </div>
+                        <div class="project-summary">
+                            <p>Aplicação para consultar manuais e procedimentos técnicos com resultados apoiados por trechos verificáveis e isolamento por usuário.</p>
+                            <ul class="technology-list" aria-label="Tecnologias do AcervoIA">
+                                <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Alembic</li><li>Ollama</li><li>JWT</li>
+                            </ul>
+                            <p class="project-status">O estado atual processa documentos e recupera evidências por similaridade; a geração de resposta final ainda não integra o fluxo publicado.</p>
+                        </div>
+                        <a class="row-arrow" href="https://github.com/mateuscardososs/AcervoIA" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do AcervoIA">↗</a>
+                    </article>
+
+                    <article class="project-row" data-reveal>
+                        <span class="row-number">04</span>
+                        <div class="project-identity">
+                            <h3>Time Registry Platform</h3>
+                            <p>Projeto privado · Java + AWS</p>
+                        </div>
+                        <div class="project-summary">
+                            <p>Plataforma de registro de ponto com backend Spring Boot, painel React e aplicativo Android, incluindo liveness e comparação facial.</p>
+                            <ul class="technology-list" aria-label="Tecnologias do Time Registry Platform">
+                                <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>React</li><li>Android</li><li>AWS Rekognition</li><li>S3 + KMS</li>
+                            </ul>
+                        </div>
+                        <span class="row-arrow row-arrow-muted" aria-label="Repositório privado">—</span>
                     </article>
                 </div>
             </div>
@@ -225,19 +196,19 @@
                 </header>
                 <div class="trajectory" data-reveal>
                     <article class="trajectory-row">
-                        <p class="trajectory-period">Mar 2025 — hoje</p>
+                        <p class="trajectory-period">Mar 2025 — Ago 2026</p>
                         <div>
                             <h3>Estágio de Desenvolvedor de Software</h3>
                             <p class="company">Tribunal Regional Federal da 5ª Região · TRF5</p>
-                            <p>Atuo no desenvolvimento de soluções internas que conectam APIs, dados e automação de processos.</p>
+                            <p>Atuei no desenvolvimento de soluções internas que conectavam APIs, dados e automação de processos.</p>
                             <ul>
-                                <li>Desenvolvo e evoluo APIs REST com Java e Spring Boot.</li>
-                                <li>Crio serviços, sites e ferramentas de automação com Python e FastAPI.</li>
-                                <li>Trabalho com PostgreSQL, consultas, regras de negócio e integração entre sistemas.</li>
-                                <li>Participo da introdução de recursos de IA em soluções e ferramentas de trabalho.</li>
-                                <li>Implemento automações com envio de informações por e-mail e WhatsApp.</li>
+                                <li>Desenvolvi e evoluí APIs REST com Java e Spring Boot.</li>
+                                <li>Criei serviços, sites e ferramentas de automação com Python e FastAPI.</li>
+                                <li>Trabalhei com PostgreSQL, consultas, regras de negócio e integração entre sistemas.</li>
+                                <li>Participei da introdução de recursos de IA em soluções e ferramentas de trabalho.</li>
+                                <li>Implementei automações com envio de informações por e-mail e WhatsApp.</li>
                             </ul>
-                            <p>Também atuo em uma solução interna de monitoramento de ambientes Qlik.</p>
+                            <p>Também atuei em uma solução interna de monitoramento de ambientes Qlik.</p>
                             <p class="trajectory-tags">Java · Spring Boot · Python · FastAPI · PostgreSQL · APIs REST</p>
                         </div>
                     </article>
