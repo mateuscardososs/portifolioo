@@ -103,6 +103,7 @@ assert_not_contains styles.css 'gradient('
 assert_not_contains styles.css 'box-shadow:'
 assert_contains styles.css '[data-reveal]'
 assert_contains styles.css '.capture-mode [data-reveal]'
+assert_contains styles.css 'html.capture-mode'
 assert_contains styles.css '@media (prefers-reduced-motion: reduce)'
 assert_contains styles.css ':focus-visible'
 
@@ -141,6 +142,9 @@ assert_contains script.js 'aria-current'
 assert_contains script.js 'prefers-reduced-motion'
 assert_contains script.js 'America/Recife'
 assert_contains script.js 'Intl.DateTimeFormat'
+assert_contains script.js 'document.fonts.ready'
+assert_contains script.js 'history.replaceState'
+assert_contains script.js 'window.scrollTo'
 assert_not_contains script.js 'initHeroGlow'
 node --check script.js
 

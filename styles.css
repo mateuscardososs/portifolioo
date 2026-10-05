@@ -26,6 +26,10 @@ html {
     scroll-padding-top: var(--header-height);
 }
 
+html.capture-mode {
+    scroll-behavior: auto;
+}
+
 body {
     min-width: 320px;
     margin: 0;

@@ -13,10 +13,37 @@ window.addEventListener('DOMContentLoaded', () => {
     initActiveNavigation();
     initCopyEmail();
     initScrollReveal();
-    if (captureMode && window.location.hash) {
-        document.querySelector(window.location.hash)?.scrollIntoView({ block: 'start' });
-    }
+    positionCaptureTarget();
 });
+
+function positionCaptureTarget() {
+    if (!captureMode || !window.location.hash) {
+        return;
+    }
+
+    const target = document.querySelector(window.location.hash);
+    if (!target) {
+        return;
+    }
+
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+
+    const scrollToTarget = () => {
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+                const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+                const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                window.scrollTo({ top: Math.max(0, targetTop), behavior: 'auto' });
+            });
+        });
+    };
+
+    if (document.fonts?.ready) {
+        document.fonts.ready.then(scrollToTarget);
+    } else {
+        scrollToTarget();
+    }
+}
 
 function setCurrentYear() {
     const year = document.getElementById('current-year');
