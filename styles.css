@@ -394,14 +394,51 @@ dd {
     max-width: 290px;
 }
 
-.about-copy > p:first-child {
+.about-intro > p:first-child {
     color: #C8C6C1;
     font-size: clamp(1.16rem, 1.8vw, 1.38rem);
     line-height: 1.55;
 }
 
-.about-copy p + p {
-    margin-top: 24px;
+.about-intro p + p {
+    margin-top: 18px;
+}
+
+.about-competencies {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 48px;
+    margin: 48px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-competency {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    align-content: start;
+    padding: 28px 0 32px;
+    border-top: 1px solid var(--border);
+    column-gap: 14px;
+}
+
+.about-competency span {
+    grid-row: 1 / span 2;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.about-competency h3 {
+    margin: -4px 0 12px;
+    font-size: 1.22rem;
+}
+
+.about-competency p {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
 }
 
 .about-focus {
@@ -789,6 +826,11 @@ dd {
         gap: 54px;
     }
 
+    #sobre .section-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
     .project-row {
         grid-template-columns: 52px minmax(190px, 0.72fr) minmax(0, 1.3fr) 24px;
     }
@@ -855,6 +897,15 @@ dd {
 
     .section-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-competencies {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+
+    .about-competency {
+        padding: 26px 0 30px;
     }
 
     .hero-portrait {
