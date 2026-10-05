@@ -71,6 +71,29 @@ assert_not_contains tools/og-image.html 'https://'
 assert_contains scripts/generate-og-image.mjs '--window-size=1200,630'
 assert_contains scripts/generate-og-image.mjs 'og-image.png'
 
+[[ -f scripts/capture-screenshots.mjs ]] || fail 'scripts/capture-screenshots.mjs must exist'
+[[ -f scripts/verify-layout.mjs ]] || fail 'scripts/verify-layout.mjs must exist'
+assert_contains scripts/capture-screenshots.mjs 'playwright'
+assert_contains scripts/capture-screenshots.mjs '?capture=1#'
+assert_contains script.js "searchParams.has('capture')"
+assert_contains styles.css '.capture-mode [data-reveal]'
+assert_contains styles.css '.timeline-marker { left: -30px; }'
+for section_name in hero experiencia case competencias contato; do
+    for viewport in desktop mobile; do
+        screenshot="screenshots/${viewport}-${section_name}.png"
+        [[ -s "$screenshot" ]] || fail "$screenshot must exist and not be empty"
+        read -r shot_width shot_height < <(SCREENSHOT="$screenshot" node -e '
+            const image = require("fs").readFileSync(process.env.SCREENSHOT);
+            process.stdout.write(`${image.readUInt32BE(16)} ${image.readUInt32BE(20)}\n`);
+        ')
+        if [[ "$viewport" == desktop ]]; then
+            [[ "$shot_width" -eq 1440 && "$shot_height" -eq 1000 ]] || fail "$screenshot must be 1440x1000"
+        else
+            [[ "$shot_width" -eq 390 && "$shot_height" -eq 844 ]] || fail "$screenshot must be 390x844"
+        fi
+    done
+done
+
 assert_contains index.html 'Desenvolvedor Backend Java'
 assert_contains index.html 'mais de 250 testes automatizados'
 assert_contains index.html 'Projeto desenvolvido individualmente.'
@@ -92,35 +115,36 @@ assert_not_contains index.html 'falta de autorização confirmada'
 assert_not_contains index.html '33 commits'
 
 for token in \
-    '--bg: #0B0D10' \
-    '--surface: #12161B' \
-    '--border: #29313A' \
-    '--text: #F2F5F7' \
-    '--text-muted: #A8B2BD' \
-    '--accent: #5BB8FF' \
-    '--accent-ink: #06111A'; do
+    '--bg: #06070A' \
+    '--surface: #0E1015' \
+    '--surface-2: #151822' \
+    '--border: #232834' \
+    '--text: #F4F5F7' \
+    '--muted: #9AA3B2' \
+    '--accent: #7C6CFF' \
+    '--accent-2: #4FD1C5'; do
     assert_contains styles.css "$token"
 done
 
 assert_not_contains index.html 'fonts.googleapis.com'
 assert_not_contains index.html 'fonts.gstatic.com'
 assert_contains index.html 'href="assets/fonts/fonts.css"'
-assert_contains index.html 'href="assets/fonts/archivo-latin-wght-normal.woff2"'
-assert_contains index.html 'href="assets/fonts/source-sans-3-latin-wght-normal.woff2"'
+assert_contains index.html 'href="assets/fonts/sora-latin-wght-normal.woff2"'
+assert_contains index.html 'href="assets/fonts/manrope-latin-wght-normal.woff2"'
 assert_count index.html 'rel="preload" as="font"' 2
 
 for font_file in \
-    assets/fonts/archivo-latin-wght-normal.woff2 \
-    assets/fonts/source-sans-3-latin-wght-normal.woff2 \
-    assets/fonts/azeret-mono-latin-wght-normal.woff2; do
+    assets/fonts/sora-latin-wght-normal.woff2 \
+    assets/fonts/manrope-latin-wght-normal.woff2 \
+    assets/fonts/jetbrains-mono-latin-wght-normal.woff2; do
     [[ -s "$font_file" ]] || fail "$font_file must exist and not be empty"
 done
 
-assert_contains assets/fonts/fonts.css 'font-family: "Archivo"'
-assert_contains assets/fonts/fonts.css 'font-weight: 700 800'
-assert_contains assets/fonts/fonts.css 'font-family: "Source Sans 3"'
+assert_contains assets/fonts/fonts.css 'font-family: "Sora"'
+assert_contains assets/fonts/fonts.css 'font-weight: 600 700'
+assert_contains assets/fonts/fonts.css 'font-family: "Manrope"'
 assert_contains assets/fonts/fonts.css 'font-weight: 400 700'
-assert_contains assets/fonts/fonts.css 'font-family: "Azeret Mono"'
+assert_contains assets/fonts/fonts.css 'font-family: "JetBrains Mono"'
 assert_contains assets/fonts/fonts.css 'font-weight: 500 600'
 assert_count assets/fonts/fonts.css 'font-display: swap' 3
 assert_count assets/fonts/fonts.css 'size-adjust:' 3
@@ -128,26 +152,38 @@ assert_count assets/fonts/fonts.css 'ascent-override:' 3
 assert_count assets/fonts/fonts.css 'unicode-range: U+0000-00FF' 3
 
 for license_file in \
-    assets/fonts/licenses/Archivo-OFL.txt \
-    assets/fonts/licenses/Source-Sans-3-OFL.txt \
-    assets/fonts/licenses/Azeret-Mono-OFL.txt; do
+    assets/fonts/licenses/Sora-OFL.txt \
+    assets/fonts/licenses/Manrope-OFL.txt \
+    assets/fonts/licenses/JetBrains-Mono-OFL.txt; do
     assert_contains "$license_file" 'SIL OPEN FONT LICENSE Version 1.1'
 done
 
-assert_contains styles.css '"Archivo Fallback"'
-assert_contains styles.css '"Source Sans 3 Fallback"'
-assert_contains styles.css '"Azeret Mono Fallback"'
+assert_contains styles.css '"Sora Fallback"'
+assert_contains styles.css '"Manrope Fallback"'
+assert_contains styles.css '"JetBrains Mono Fallback"'
+assert_contains index.html 'class="hero-layout"'
+assert_contains index.html 'class="status-panel"'
+assert_contains index.html 'class="metric-strip"'
+assert_contains index.html 'class="timeline"'
+assert_contains index.html 'class="case-story-grid"'
+assert_contains index.html 'class="case-stack-card"'
+assert_contains index.html 'class="bento-grid"'
+assert_count index.html 'class="capability-icon"' 4
 assert_contains styles.css 'grid-template-columns: repeat(12, minmax(0, 1fr))'
+assert_contains styles.css 'radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%)'
+assert_contains styles.css 'backdrop-filter: blur('
+assert_contains styles.css '[data-reveal]'
 assert_contains styles.css '@media (prefers-reduced-motion: reduce)'
 assert_contains styles.css ':focus-visible'
 assert_contains index.html 'id="copy-email"'
 assert_contains script.js 'navigator.clipboard.writeText'
 assert_contains script.js 'IntersectionObserver'
 assert_contains script.js "aria-current"
+assert_contains script.js 'initScrollReveal'
+assert_contains script.js 'initHeroGlow'
 
 assert_not_contains index.html 'cdn.jsdelivr.net'
 assert_not_contains index.html 'unpkg.com'
-assert_not_contains script.js 'initScrollReveal'
 
 node --check script.js
 
