@@ -1,17 +1,17 @@
 window.addEventListener('DOMContentLoaded', () => {
-    if (window.lucide) {
-        window.lucide.createIcons();
-    }
+    setCurrentYear();
+    initHeader();
+    initMobileMenu();
+    initActiveNavigation();
+    initCopyEmail();
+});
 
+function setCurrentYear() {
     const year = document.getElementById('current-year');
     if (year) {
         year.textContent = new Date().getFullYear();
     }
-
-    initHeader();
-    initMobileMenu();
-    initScrollReveal();
-});
+}
 
 function initHeader() {
     const header = document.querySelector('.site-header');
@@ -19,10 +19,7 @@ function initHeader() {
         return;
     }
 
-    const updateHeader = () => {
-        header.classList.toggle('is-scrolled', window.scrollY > 12);
-    };
-
+    const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
 }
@@ -30,70 +27,101 @@ function initHeader() {
 function initMobileMenu() {
     const button = document.getElementById('menu-button');
     const menu = document.getElementById('site-menu');
-
     if (!button || !menu) {
         return;
     }
 
-    const closeMenu = () => {
-        button.setAttribute('aria-expanded', 'false');
-        button.setAttribute('aria-label', 'Abrir menu');
-        menu.classList.remove('is-open');
-        button.innerHTML = '<i data-lucide="menu"></i>';
-        if (window.lucide) {
-            window.lucide.createIcons();
-        }
+    const setMenuState = (isOpen) => {
+        button.setAttribute('aria-expanded', String(isOpen));
+        button.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        menu.classList.toggle('is-open', isOpen);
     };
 
     button.addEventListener('click', () => {
-        const isOpen = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!isOpen));
-        button.setAttribute('aria-label', !isOpen ? 'Fechar menu' : 'Abrir menu');
-        menu.classList.toggle('is-open', !isOpen);
-        button.innerHTML = !isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-        if (window.lucide) {
-            window.lucide.createIcons();
-        }
+        setMenuState(button.getAttribute('aria-expanded') !== 'true');
     });
 
     menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', () => setMenuState(false));
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeMenu();
+        if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+            setMenuState(false);
+            button.focus();
         }
     });
 }
 
-function initScrollReveal() {
-    const revealItems = document.querySelectorAll(
-        '.section-heading, .text-block, .profile-panel, .stack-card, .project-card, .experience-card, .contact-links a'
-    );
-
-    if (!revealItems.length) {
+function initActiveNavigation() {
+    const links = [...document.querySelectorAll('[data-nav]')];
+    if (!links.length || !('IntersectionObserver' in window)) {
         return;
     }
 
-    revealItems.forEach((item) => item.classList.add('reveal'));
+    const sections = links.map((link) => document.getElementById(link.dataset.nav)).filter(Boolean);
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        revealItems.forEach((item) => item.classList.add('is-visible'));
-        return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+    const setActiveLink = (sectionId) => {
+        links.forEach((link) => {
+            if (link.dataset.nav === sectionId) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
             }
         });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+        if (visible) {
+            setActiveLink(visible.target.id);
+        }
     }, {
-        threshold: 0.14,
-        rootMargin: '0px 0px -40px 0px'
+        rootMargin: '-24% 0px -62% 0px',
+        threshold: [0, 0.2, 0.5]
     });
 
-    revealItems.forEach((item) => observer.observe(item));
+    sections.forEach((section) => observer.observe(section));
+}
+
+function initCopyEmail() {
+    const button = document.getElementById('copy-email');
+    const status = document.getElementById('copy-status');
+    if (!button || !status) {
+        return;
+    }
+
+    button.addEventListener('click', async () => {
+        const email = button.dataset.email;
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(email);
+            } else {
+                copyWithFallback(email);
+            }
+            status.textContent = 'E-mail copiado.';
+            button.textContent = 'Copiado';
+        } catch {
+            status.textContent = 'Não foi possível copiar. Selecione o endereço ao lado.';
+        }
+    });
+}
+
+function copyWithFallback(value) {
+    const field = document.createElement('textarea');
+    field.value = value;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.select();
+    const copied = document.execCommand('copy');
+    field.remove();
+
+    if (!copied) {
+        throw new Error('Copy command failed');
+    }
 }

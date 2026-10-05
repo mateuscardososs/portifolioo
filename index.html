@@ -3,325 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mateus Cardoso | Backend, APIs e Automação</title>
-    <meta name="description" content="Portfólio de Mateus Cardoso, desenvolvedor backend/full stack júnior com foco em Java, Spring Boot, Python, FastAPI, PostgreSQL, APIs REST, integração de sistemas, automação e dados.">
+    <title>Mateus Cardoso | Desenvolvedor Backend Java</title>
+    <meta name="description" content="Portfólio de Mateus Cardoso, desenvolvedor backend Java em Recife, com experiência em APIs REST, integrações, PostgreSQL e automações com Python.">
     <meta name="author" content="Mateus Cardoso">
-
-    <meta property="og:title" content="Mateus Cardoso | Backend, APIs e Automação">
-    <meta property="og:description" content="Desenvolvedor backend/full stack júnior com experiência prática em APIs REST, integrações, automação e dados.">
+    <meta name="theme-color" content="#0B0D10">
+    <meta property="og:title" content="Mateus Cardoso | Desenvolvedor Backend Java">
+    <meta property="og:description" content="APIs e serviços para conectar regras de negócio, dados e operações internas.">
     <meta property="og:type" content="website">
-
+    <meta property="og:locale" content="pt_BR">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&amp;family=Azeret+Mono:wght@500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
     <header class="site-header" id="topo">
         <nav class="nav container" aria-label="Navegação principal">
-            <a class="brand" href="#inicio" aria-label="Ir para o início">Mateus Cardoso</a>
-
+            <a class="brand" href="#inicio" aria-label="Mateus Cardoso — início">
+                <span>Mateus Cardoso</span>
+                <small>Backend Java</small>
+            </a>
             <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
-                <i data-lucide="menu"></i>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
-
             <div class="nav-links" id="site-menu">
-                <a href="#sobre">Sobre</a>
-                <a href="#stack">Stack</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#experiencia">Experiência</a>
-                <a href="#contato">Contato</a>
+                <a href="#experiencia" data-nav="experiencia">Experiência</a>
+                <a href="#case-controle" data-nav="case-controle">Case técnico</a>
+                <a href="#competencias" data-nav="competencias">Competências</a>
+                <a href="curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer">Currículo</a>
+                <a href="#contato" data-nav="contato">Contato</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero section" id="inicio">
-            <div class="container hero-grid">
+    <main id="conteudo">
+        <section class="hero section" id="inicio" aria-labelledby="hero-title">
+            <div class="container dossier-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Backend / Full Stack Júnior</p>
-                    <h1>Mateus Cardoso</h1>
-                    <p class="hero-stack">APIs, integrações e automações para sistemas internos</p>
-                    <p class="hero-description">
-                        Desenvolvo soluções com Java, Spring Boot, Python, FastAPI e PostgreSQL, conectando regras de negócio,
-                        dados e interfaces administrativas. No TRF5, atuo com APIs REST, automações internas e integrações entre sistemas.
-                    </p>
-
-                    <div class="hero-actions" aria-label="Links principais">
-                        <a class="button button-primary" href="#projetos">Ver projetos</a>
-                        <a class="button button-secondary" href="https://github.com/mateuscardososs" target="_blank" rel="noopener noreferrer">
-                            <i data-lucide="github"></i>
-                            Ver GitHub
-                        </a>
-                        <a class="button button-secondary" href="/curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer">
-                            <i data-lucide="file-down"></i>
-                            Baixar CV
-                        </a>
+                    <p class="section-label">Desenvolvedor Backend Java · Recife, PE</p>
+                    <h1 id="hero-title">Mateus<br>Cardoso</h1>
+                    <p class="hero-thesis">Construo APIs e serviços para conectar regras de negócio, dados e operações internas.</p>
+                    <p class="hero-support">Java e Spring Boot são meu foco; Python, automação e dados complementam as soluções.</p>
+                    <p class="availability">Aberto a oportunidades remotas, híbridas e presenciais, no Brasil e no exterior.</p>
+                    <div class="hero-actions" role="group" aria-label="Ações principais">
+                        <a class="button button-primary" href="#case-controle">Ver case técnico</a>
+                        <a class="quiet-link" href="https://github.com/mateuscardososs" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        <a class="quiet-link" href="curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer">Currículo <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
 
-                <aside class="profile-panel" aria-label="Resumo profissional">
-                    <div>
-                        <span class="panel-label">Atuação atual</span>
-                        <strong>TRF5 • Backend, APIs e automação</strong>
-                    </div>
-                    <div>
-                        <span class="panel-label">Formação</span>
-                        <strong>Ciência da Computação • UNICAP</strong>
-                    </div>
-                    <div>
-                        <span class="panel-label">Disponível para</span>
-                        <strong>Backend / Full Stack Júnior</strong>
-                    </div>
+                <aside class="proof-panel" aria-label="Prova técnica em destaque">
+                    <p class="proof-index">Case 01 / principal</p>
+                    <p class="proof-title">Controle de Acesso</p>
+                    <p>Sistema de controle de acesso desenvolvido do zero, usado em evento de grande porte, com Java 21, Spring Boot e mais de 250 testes automatizados.</p>
+                    <dl>
+                        <div><dt>Atuação atual</dt><dd>TRF5</dd></div>
+                        <div><dt>Formação</dt><dd>Ciência da Computação · UNICAP</dd></div>
+                    </dl>
                 </aside>
             </div>
         </section>
 
-        <section class="section" id="sobre">
-            <div class="container two-column">
-                <div class="section-heading">
-                    <p class="eyebrow">Sobre</p>
-                    <h2>Perfil técnico direto ao ponto</h2>
-                </div>
-                <div class="text-block">
-                    <p>
-                        Sou Mateus Cardoso, estudante de Ciência da Computação e desenvolvedor com atuação prática em backend,
-                        automação, dados e integração entre sistemas. Minha experiência começou em TI operacional, suporte, dados e
-                        automações internas, o que me ajudou a entender problemas reais de empresas antes de pensar apenas em código.
-                    </p>
-                    <p>
-                        Hoje atuo no TRF5 com desenvolvimento e evolução de APIs REST, automações internas, integrações entre sistemas,
-                        consultas em PostgreSQL e apoio a soluções orientadas a dados. Tenho foco em construir soluções úteis,
-                        organizadas e sustentáveis, ligando regras de negócio, banco de dados, serviços e interfaces administrativas.
-                    </p>
-                    <p>
-                        Também desenvolvo projetos próprios com Java, Spring Boot, Python, FastAPI, Node.js, React, Docker,
-                        autenticação, mensageria, WebSocket e IA aplicada. Busco evoluir como backend/full stack, com base forte em
-                        engenharia de software, modelagem relacional, arquitetura em camadas e integração de sistemas.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-muted" id="stack">
+        <section class="section section-ruled" id="experiencia" aria-labelledby="experiencia-title">
             <div class="container">
-                <div class="section-heading section-heading-wide">
-                    <p class="eyebrow">Stack</p>
-                    <h2>Competências técnicas</h2>
-                    <p>As tecnologias aparecem agrupadas pelo tipo de problema que resolvem, para facilitar a leitura.</p>
-                </div>
-
-                <div class="stack-grid">
-                    <article class="stack-card">
-                        <div class="card-icon"><i data-lucide="server-cog"></i></div>
-                        <h3>Backend</h3>
-                        <ul class="competency-list">
-                            <li>Java 21, Spring Boot 3 e APIs REST.</li>
-                            <li>Python, FastAPI e automações internas.</li>
-                            <li>PostgreSQL, modelagem relacional e consultas.</li>
-                            <li>Autenticação JWT, RBAC e integrações entre sistemas.</li>
-                        </ul>
-                    </article>
-
-                    <article class="stack-card">
-                        <div class="card-icon"><i data-lucide="panel-top"></i></div>
-                        <h3>Frontend</h3>
-                        <ul class="competency-list">
-                            <li>React, TypeScript e JavaScript.</li>
-                            <li>Interfaces administrativas conectadas a APIs.</li>
-                            <li>HTML, CSS e Tailwind CSS quando o projeto pede velocidade.</li>
-                        </ul>
-                    </article>
-
-                    <article class="stack-card">
-                        <div class="card-icon"><i data-lucide="wrench"></i></div>
-                        <h3>Ferramentas</h3>
-                        <ul class="competency-list">
-                            <li>Git, GitHub, Docker, Linux e Maven.</li>
-                            <li>DBeaver para apoio em dados e consultas.</li>
-                            <li>Qlik Sense e Power BI para leitura operacional.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="projetos">
-            <div class="container">
-                <div class="section-heading section-heading-wide">
-                    <p class="eyebrow">Projetos</p>
-                    <h2>Projetos com backend, integrações e contexto real</h2>
-                    <p>Cada projeto destaca o problema, a solução e a evidência técnica que ajuda na avaliação do código.</p>
-                </div>
-
-                <div class="projects-grid">
-                    <article class="project-card project-featured">
-                        <div class="project-kicker">Projeto principal</div>
-                        <div class="project-header">
-                            <h3>Controle de Acesso</h3>
-                            <a class="button button-secondary" href="https://github.com/mateuscardososs/Controle-de-acesso" target="_blank" rel="noopener noreferrer">
-                                <i data-lucide="external-link"></i>
-                                Ver repositório
-                            </a>
-                        </div>
-                        <p>
-                            Plataforma full stack para gestão de colaboradores, convidados, áreas, dispositivos e eventos de acesso em um cenário operacional real.
-                            O backend foi estruturado com Java 21, Spring Boot 3, PostgreSQL, Flyway, JWT, RBAC, RabbitMQ, WebSocket e Docker, com integração preparada para controladoras Intelbras.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Autenticação e controle de acesso por perfil.</li>
-                            <li>Gestão de colaboradores, convidados, áreas e dispositivos.</li>
-                            <li>Integração preparada com dispositivos Intelbras.</li>
-                            <li>Eventos em tempo real com WebSocket.</li>
-                            <li>Filas e fluxos assíncronos com RabbitMQ.</li>
-                            <li>Rastreabilidade e auditoria.</li>
-                        </ul>
-                        <ul class="tag-list project-tags">
-                            <li>Java</li>
-                            <li>Spring Boot</li>
-                            <li>PostgreSQL</li>
-                            <li>RBAC</li>
-                            <li>RabbitMQ</li>
-                            <li>WebSocket</li>
-                            <li>Docker</li>
-                        </ul>
-                    </article>
-
-                    <article class="project-card">
-                        <h3>Qlik Monitoring Service</h3>
-                        <div class="project-detail">
-                            <span>Problema</span>
-                            <p>Alterações em ambientes Qlik precisam ser monitoradas com rastreio e resposta operacional mais rápida.</p>
-                        </div>
-                        <div class="project-detail">
-                            <span>Solução</span>
-                            <p>Serviço backend modular para monitoramento de Qlik Sense, detecção estruturada de alterações, resumos com IA e notificações automáticas.</p>
-                        </div>
-                        <div class="project-detail">
-                            <span>Evidência técnica</span>
-                            <p>Estrutura modular para detectar mudanças, resumir eventos e acionar notificações com menor esforço operacional.</p>
-                        </div>
-                        <ul class="tag-list project-tags">
-                            <li>Python</li>
-                            <li>FastAPI</li>
-                            <li>Qlik Sense</li>
-                            <li>Automação</li>
-                        </ul>
-                        <a href="https://github.com/mateuscardososs/qlik-monitoring-service" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-muted" id="experiencia">
-            <div class="container">
-                <div class="section-heading section-heading-wide">
-                    <p class="eyebrow">Experiência</p>
-                    <h2>Atuação prática e formação</h2>
-                </div>
-
+                <header class="section-heading">
+                    <p class="section-label">Experiência</p>
+                    <h2 id="experiencia-title">Código aplicado a operações reais</h2>
+                    <p>Experiência profissional em backend, automação, dados e suporte a sistemas internos.</p>
+                </header>
                 <div class="experience-list">
-                    <article class="experience-card">
-                        <div class="experience-meta">Mar 2025 — Atual</div>
-                        <div class="experience-body">
-                            <h3>Estágio em Desenvolvimento Backend</h3>
-                            <p class="company">Tribunal Regional Federal da 5ª Região (TRF5)</p>
-                            <p>Atuação no desenvolvimento e evolução de APIs REST com Java e Spring Boot, além da criação de serviços e automações com Python/FastAPI para apoiar fluxos internos. Trabalho com PostgreSQL, consultas, validação de regras de negócio, consumo e exposição de serviços, integração entre sistemas e apoio a soluções orientadas a dados com Qlik Sense.</p>
-                            <p>Também contribuo com análise de erros, documentação técnica, melhoria de fluxos operacionais e uso de IA como apoio para produtividade, entendimento de código, revisão de soluções e geração de insights.</p>
-                            <ul class="tag-list experience-tags">
-                                <li>Java</li>
-                                <li>Spring Boot</li>
-                                <li>Python</li>
-                                <li>FastAPI</li>
-                                <li>PostgreSQL</li>
-                                <li>APIs REST</li>
-                                <li>Integração</li>
-                                <li>Automação</li>
-                                <li>Qlik Sense</li>
-                                <li>IA aplicada</li>
+                    <article class="experience-entry">
+                        <div class="experience-meta"><p>Mar 2025 — Atual</p><span>Recife, PE</span></div>
+                        <div class="experience-content">
+                            <h3>Estágio de Desenvolvedor de Software</h3>
+                            <p class="company">Tribunal Regional Federal da 5ª Região — TRF5</p>
+                            <p>Atuo no desenvolvimento de soluções internas que conectam APIs, dados e automação de processos.</p>
+                            <ul class="evidence-list">
+                                <li>Desenvolvo e evoluo APIs REST com Java e Spring Boot.</li>
+                                <li>Crio serviços, sites e ferramentas de automação com Python e FastAPI.</li>
+                                <li>Trabalho com PostgreSQL, consultas, regras de negócio e integração entre sistemas.</li>
+                                <li>Participo da introdução de recursos de IA em soluções e ferramentas de trabalho.</li>
+                                <li>Implemento automações com envio de informações por e-mail e WhatsApp.</li>
                             </ul>
+                            <p class="experience-note">Também atuo em uma solução interna de monitoramento de ambientes Qlik.</p>
+                            <p class="technology-line"><strong>Tecnologias:</strong> Java, Spring Boot, Python, FastAPI, PostgreSQL, React, APIs REST e Qlik Sense.</p>
                         </div>
                     </article>
-
-                    <article class="experience-card">
-                        <div class="experience-meta">Fev 2023 — Mar 2025</div>
-                        <div class="experience-body">
+                    <article class="experience-entry">
+                        <div class="experience-meta"><p>Fev 2023 — Fev 2025</p><span>Recife, PE</span></div>
+                        <div class="experience-content">
                             <h3>Técnico de TI</h3>
                             <p class="company">AD Balanças e Engenharia</p>
-                            <p>Atuação em suporte técnico, infraestrutura, automação de rotinas e melhoria de processos internos. Desenvolvi scripts e soluções com Python e SQL para padronizar tarefas, apoiar relatórios e melhorar a confiabilidade dos dados. Também trabalhei com Power BI para acompanhamento de indicadores e suporte à decisão em áreas administrativas e operacionais.</p>
-                            <p>Essa experiência foi importante para desenvolver visão prática de negócio, operação, dados e atendimento a usuários.</p>
-                            <ul class="tag-list experience-tags">
-                                <li>Python</li>
-                                <li>SQL</li>
-                                <li>Power BI</li>
-                                <li>Suporte Técnico</li>
-                                <li>Automação</li>
-                                <li>Dados</li>
-                                <li>Processos Internos</li>
+                            <p>Atuei em suporte, infraestrutura, automação e melhoria de processos internos.</p>
+                            <ul class="evidence-list">
+                                <li>Prestei suporte a hardware e software.</li>
+                                <li>Automatizei rotinas operacionais e de backup com Python.</li>
+                                <li>Desenvolvi soluções internas com Java, Python e SQL.</li>
+                                <li>Apoiei controles de estoque, relatórios e painéis no Power BI.</li>
                             </ul>
-                        </div>
-                    </article>
-
-                    <article class="experience-card">
-                        <div class="experience-meta">2022 — 2026.1</div>
-                        <div class="experience-body">
-                            <h3>Ciência da Computação</h3>
-                            <p class="company">Universidade Católica de Pernambuco (UNICAP)</p>
-                            <p>Formação em engenharia de software, estruturas de dados, banco de dados, arquitetura de sistemas, redes, segurança e qualidade de código.</p>
+                            <p class="technology-line"><strong>Tecnologias:</strong> Python, Java, SQL, PostgreSQL e Power BI.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section contact-section" id="contato">
-            <div class="container contact-grid">
-                <div class="section-heading">
-                    <p class="eyebrow">Contato</p>
-                    <h2>Vamos conversar</h2>
-                    <p>Aberto a oportunidades júnior em backend/full stack e a conversas sobre APIs, integrações, automação e dados.</p>
-                </div>
+        <section class="section case-section" id="case-controle" aria-labelledby="case-title">
+            <div class="container case-layout">
+                <aside class="case-sidebar" aria-label="Resumo do case Controle de Acesso">
+                    <p class="section-label">Case técnico principal</p>
+                    <p class="case-number">01</p>
+                    <dl class="case-facts">
+                        <div><dt>Estado</dt><dd>Usado em evento real</dd></div>
+                        <div><dt>Autoria</dt><dd>Desenvolvimento individual</dd></div>
+                        <div><dt>Backend</dt><dd>Java 21 · Spring Boot 3</dd></div>
+                        <div><dt>Frontend</dt><dd>Next.js · React · TypeScript</dd></div>
+                    </dl>
+                    <a class="button button-secondary" href="https://github.com/mateuscardososs/Controle-de-acesso" target="_blank" rel="noopener noreferrer">Abrir repositório <span aria-hidden="true">↗</span></a>
+                </aside>
 
-                <div class="contact-links" aria-label="Canais de contato">
-                    <a href="mailto:mateus7.cardoso@hotmail.com">
-                        <i data-lucide="mail"></i>
-                        <span>E-mail</span>
-                        <strong>mateus7.cardoso@hotmail.com</strong>
-                    </a>
-                    <a href="https://wa.me/5581998109812" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="message-circle"></i>
-                        <span>WhatsApp</span>
-                        <strong>+55 (81) 99810-9812</strong>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mateus-cardosos" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="linkedin"></i>
-                        <span>LinkedIn</span>
-                        <strong>/in/mateus-cardosos</strong>
-                    </a>
-                    <a href="https://github.com/mateuscardososs" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="github"></i>
-                        <span>GitHub</span>
-                        <strong>@mateuscardososs</strong>
-                    </a>
-                    <a href="/curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="file-down"></i>
-                        <span>Currículo</span>
-                        <strong>Baixar curriculo-mateus.pdf</strong>
-                    </a>
+                <article class="case-body">
+                    <header class="case-header">
+                        <p class="case-kicker">Gestão e operação de acessos</p>
+                        <h2 id="case-title">Controle de Acesso</h2>
+                        <p>Sistema full stack para gerenciar colaboradores, convidados, áreas, dispositivos e eventos de acesso em uma operação de grande porte.</p>
+                    </header>
+                    <div class="case-sequence">
+                        <section class="case-block" aria-labelledby="contexto-title">
+                            <p class="sequence-marker">A</p>
+                            <div><h3 id="contexto-title">Contexto</h3><p>O projeto nasceu para organizar cadastros e permissões de acesso, acompanhar dispositivos e registrar eventos em uma operação real.</p></div>
+                        </section>
+                        <section class="case-block" aria-labelledby="papel-title">
+                            <p class="sequence-marker">B</p>
+                            <div><h3 id="papel-title">Meu papel</h3><p><strong>Projeto desenvolvido individualmente.</strong> Modelei os dados, construí backend e interfaces e implementei autenticação, gestão de pessoas, fluxo de visitantes, processamento de fotos, mensageria e atualização em tempo real.</p></div>
+                        </section>
+                        <section class="case-block" aria-labelledby="decisao-title">
+                            <p class="sequence-marker">C</p>
+                            <div>
+                                <h3 id="decisao-title">Decisão técnica e trade-off</h3>
+                                <p>A integração com as controladoras fica atrás de uma abstração de provider. Assim, o desenvolvimento pode usar um provider simulado sem hardware, enquanto a operação habilita o provider real por configuração.</p>
+                                <p>RabbitMQ desacopla a sincronização do fluxo principal, e WebSocket atualiza a interface. A separação adiciona componentes à execução, mas evita bloquear cadastros durante a comunicação com dispositivos.</p>
+                            </div>
+                        </section>
+                        <section class="case-block evidence-block" aria-labelledby="evidencia-title">
+                            <p class="sequence-marker">D</p>
+                            <div>
+                                <h3 id="evidencia-title">Evidência verificável</h3>
+                                <ul class="verification-grid">
+                                    <li><span>Testes</span><strong>279 testes JUnit no backend</strong><p>Cobrem autenticação, RBAC, cadastros, dispositivos, eventos, fotos e integração Intelbras.</p></li>
+                                    <li><span>Execução</span><strong>Roteiro local documentado</strong><p>Docker Compose para infraestrutura, Maven para a API e npm para o frontend.</p></li>
+                                    <li><span>Validação</span><strong>Smoke test reproduzível</strong><p>Criação de área, dispositivo e colaborador, seguida da simulação de um evento.</p></li>
+                                    <li><span>Entrega</span><strong>Compose de produção</strong><p>Backend, frontend, PostgreSQL, RabbitMQ, proxy, Prometheus e Grafana.</p></li>
+                                </ul>
+                                <p class="ci-note">Testes executáveis localmente com Maven; workflow público de CI ainda não configurado.</p>
+                            </div>
+                        </section>
+                        <section class="case-block" aria-labelledby="resultado-title">
+                            <p class="sequence-marker">E</p>
+                            <div><h3 id="resultado-title">Resultado</h3><p>O sistema foi utilizado em um evento real para apoiar o cadastro e a gestão operacional de acessos.</p></div>
+                        </section>
+                        <section class="case-block state-block" aria-labelledby="estado-title">
+                            <p class="sequence-marker">F</p>
+                            <div>
+                                <h3 id="estado-title">Estado da integração Intelbras</h3>
+                                <p>Provider real validado em controladora Intelbras via CGI com autenticação Digest.<br>Modo fake mantido como padrão de desenvolvimento.<br>A compatibilidade depende do modelo e do firmware da controladora.</p>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-ruled" id="competencias" aria-labelledby="competencias-title">
+            <div class="container">
+                <header class="section-heading">
+                    <p class="section-label">Competências</p>
+                    <h2 id="competencias-title">Capacidades antes de ferramentas</h2>
+                    <p>As tecnologias aparecem como suporte ao tipo de problema resolvido.</p>
+                </header>
+                <div class="capability-grid">
+                    <article class="capability"><p class="capability-index">01</p><h3>Projetar APIs</h3><p>APIs REST, regras de negócio, autenticação e autorização.</p><p class="technology-line">Java 21 · Spring Boot 3 · Python · FastAPI · JWT · RBAC</p></article>
+                    <article class="capability"><p class="capability-index">02</p><h3>Modelar dados</h3><p>Modelagem relacional, consultas, evolução de esquemas e informação operacional.</p><p class="technology-line">PostgreSQL · MySQL · SQLAlchemy · Flyway · Qlik Sense · Power BI</p></article>
+                    <article class="capability"><p class="capability-index">03</p><h3>Integrar sistemas</h3><p>Serviços, filas, notificações e atualização de eventos em tempo real.</p><p class="technology-line">REST · RabbitMQ · WebSocket · E-mail · WhatsApp · Dispositivos</p></article>
+                    <article class="capability"><p class="capability-index">04</p><h3>Operar serviços</h3><p>Execução conteinerizada, observabilidade, análise de erros e documentação.</p><p class="technology-line">Docker · Linux · Maven · Git · Prometheus · Grafana</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section education-section" id="formacao" aria-labelledby="formacao-title">
+            <div class="container education-layout">
+                <header class="section-heading"><p class="section-label">Formação</p><h2 id="formacao-title">Base acadêmica</h2></header>
+                <div class="education-list">
+                    <p><strong>Ciência da Computação</strong> — Universidade Católica de Pernambuco (UNICAP), concluída em 2026.1.</p>
+                    <p><strong>Oracle Cloud Infrastructure 2025 Foundations Associate.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contato" aria-labelledby="contato-title">
+            <div class="container contact-layout">
+                <div class="contact-intro">
+                    <p class="section-label">Contato</p>
+                    <h2 id="contato-title">Vamos conversar sobre backend</h2>
+                    <p>Busco oportunidades com Java, APIs, integrações e sistemas orientados a dados. Estou aberto a trabalho remoto, híbrido ou presencial, no Brasil e no exterior.</p>
+                </div>
+                <div class="contact-actions">
+                    <div class="email-action">
+                        <div><span>E-mail</span><a href="mailto:mateus7.cardoso@hotmail.com">mateus7.cardoso@hotmail.com</a></div>
+                        <button class="copy-button" id="copy-email" type="button" data-email="mateus7.cardoso@hotmail.com" aria-describedby="copy-status">Copiar e-mail</button>
+                    </div>
+                    <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+                    <div class="contact-links" role="group" aria-label="Outros canais">
+                        <a href="https://www.linkedin.com/in/mateus-cardosos" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>/in/mateus-cardosos</strong></a>
+                        <a href="https://github.com/mateuscardososs" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>@mateuscardososs</strong></a>
+                        <a href="curriculo/curriculo-mateus.pdf" target="_blank" rel="noopener noreferrer"><span>Currículo</span><strong>Abrir PDF</strong></a>
+                        <a class="secondary-contact" href="https://wa.me/5581998109812" target="_blank" rel="noopener noreferrer"><span>Contato secundário</span><strong>WhatsApp</strong></a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <span>© <span id="current-year"></span> Mateus Cardoso</span>
-            <a href="#inicio">Voltar ao topo</a>
-        </div>
+        <div class="container footer-content"><span>© <span id="current-year"></span> Mateus Cardoso</span><a href="#inicio">Voltar ao topo ↑</a></div>
     </footer>
 </body>
 </html>
