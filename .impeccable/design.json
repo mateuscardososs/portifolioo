@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-03T15:31:43-03:00",
+  "title": "Design System: Mateus Cardoso Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Preto Operacional",
+        "canonical": "#0b0f14",
+        "tonalRamp": ["oklch(15% 0.01 230)", "oklch(24% 0.012 230)", "oklch(34% 0.014 230)", "oklch(45% 0.014 230)", "oklch(58% 0.012 230)", "oklch(72% 0.01 230)", "oklch(86% 0.008 230)", "oklch(95% 0.006 230)"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Superficie Tecnica",
+        "canonical": "#10161d",
+        "tonalRamp": ["oklch(17% 0.012 230)", "oklch(25% 0.014 230)", "oklch(36% 0.016 230)", "oklch(48% 0.016 230)", "oklch(60% 0.014 230)", "oklch(74% 0.012 230)", "oklch(88% 0.008 230)", "oklch(96% 0.006 230)"]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Texto Principal",
+        "canonical": "#e8edf2",
+        "tonalRamp": ["oklch(18% 0.008 240)", "oklch(30% 0.008 240)", "oklch(42% 0.008 240)", "oklch(55% 0.008 240)", "oklch(68% 0.008 240)", "oklch(80% 0.006 240)", "oklch(91% 0.004 240)", "oklch(97% 0.003 240)"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Teal de Evidencia",
+        "canonical": "#35d0b5",
+        "tonalRamp": ["oklch(16% 0.05 185)", "oklch(26% 0.07 185)", "oklch(38% 0.09 185)", "oklch(50% 0.11 185)", "oklch(62% 0.13 185)", "oklch(74% 0.11 185)", "oklch(86% 0.07 185)", "oklch(95% 0.035 185)"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Linha Estrutural",
+        "canonical": "#22303b",
+        "tonalRamp": ["oklch(18% 0.015 230)", "oklch(28% 0.016 230)", "oklch(38% 0.016 230)", "oklch(50% 0.014 230)", "oklch(62% 0.012 230)", "oklch(75% 0.01 230)", "oklch(88% 0.008 230)", "oklch(96% 0.006 230)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Tecnico",
+        "purpose": "Hero principal e primeira impressao."
+      },
+      "headline": {
+        "displayName": "Headline de Secao",
+        "purpose": "Titulos que orientam leitura e escaneamento."
+      },
+      "body": {
+        "displayName": "Texto Tecnico",
+        "purpose": "Narrativa profissional, descricoes de projetos e experiencia."
+      },
+      "label": {
+        "displayName": "Label de Evidencia",
+        "purpose": "Metadados curtos, categorias, datas e pequenos sinais de estrutura."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-shadow",
+        "value": "0 18px 50px rgba(0, 0, 0, 0.26)",
+        "purpose": "Paineis de resumo e menus elevados."
+      },
+      {
+        "name": "card-hover-shadow",
+        "value": "0 18px 45px rgba(0, 0, 0, 0.3), 0 0 34px rgba(53, 208, 181, 0.08)",
+        "purpose": "Resposta de hover em cartoes clicaveis."
+      },
+      {
+        "name": "featured-project-shadow",
+        "value": "0 24px 70px rgba(0, 0, 0, 0.36), 0 0 46px rgba(53, 208, 181, 0.12)",
+        "purpose": "Destaque raro para o projeto principal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "250ms ease",
+        "purpose": "Transicoes de hover, foco e cor."
+      },
+      {
+        "name": "reveal-transition",
+        "value": "550ms ease",
+        "purpose": "Revelacao progressiva de secoes, com fallback em prefers-reduced-motion."
+      },
+      {
+        "name": "primary-button-sheen",
+        "value": "650ms ease",
+        "purpose": "Brilho sutil no botao primario."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "980px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "narrow",
+        "value": "430px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal para projetos ou acoes de conversao.",
+      "html": "<button class=\"ds-btn-primary\">Ver projetos</button>",
+      "css": ".ds-btn-primary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border: 1px solid transparent; border-radius: var(--radius, 8px); background: var(--accent, #35d0b5); color: #07100e; font: 700 0.92rem/1.2 Inter, system-ui, sans-serif; cursor: pointer; transition: transform 250ms ease, box-shadow 250ms ease; } .ds-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22); } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent, #35d0b5); outline-offset: 4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acoes secundarias como GitHub, LinkedIn e download de curriculo.",
+      "html": "<button class=\"ds-btn-secondary\">GitHub</button>",
+      "css": ".ds-btn-secondary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border: 1px solid var(--line, #22303b); border-radius: var(--radius, 8px); background: transparent; color: var(--text, #e8edf2); font: 700 0.92rem/1.2 Inter, system-ui, sans-serif; cursor: pointer; transition: transform 250ms ease, border-color 250ms ease, background-color 250ms ease, box-shadow 250ms ease; } .ds-btn-secondary:hover { transform: translateY(-3px); border-color: var(--accent, #35d0b5); background: rgba(53, 208, 181, 0.1); box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--accent, #35d0b5); outline-offset: 4px; }"
+    },
+    {
+      "name": "Technical Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card padrao para superficies informativas como stack e experiencia.",
+      "html": "<article class=\"ds-card\"><h3>Backend</h3><p>APIs, integracoes, automacao e dados.</p></article>",
+      "css": ".ds-card { background: var(--surface, #10161d); border: 1px solid var(--line, #22303b); border-radius: var(--radius, 8px); color: var(--text, #e8edf2); padding: 24px; font-family: Inter, system-ui, sans-serif; } .ds-card h3 { margin: 0 0 12px; font-size: 1.06rem; line-height: 1.3; font-weight: 700; letter-spacing: -0.02em; } .ds-card p { margin: 0; color: var(--muted, #9ba7b4); line-height: 1.6; }"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Tag compacta e estatica para tecnologias e highlights.",
+      "html": "<span class=\"ds-chip\">Spring Boot</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; padding: 6px 10px; border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 999px; background: rgba(255, 255, 255, 0.03); color: var(--muted, #9ba7b4); font: 600 0.82rem/1.2 Inter, system-ui, sans-serif; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Link de navegacao discreto para header sticky.",
+      "html": "<a class=\"ds-nav-link\" href=\"#projetos\">Projetos</a>",
+      "css": ".ds-nav-link { color: var(--muted, #9ba7b4); font: 500 0.9rem/1.2 Inter, system-ui, sans-serif; text-decoration: none; transition: color 250ms ease; } .ds-nav-link:hover { color: var(--text, #e8edf2); } .ds-nav-link:focus-visible { outline: 2px solid var(--accent, #35d0b5); outline-offset: 4px; }"
+    },
+    {
+      "name": "Contact Link",
+      "kind": "custom",
+      "refersTo": "contact-link",
+      "description": "Linha de contato com label, valor e icone.",
+      "html": "<a class=\"ds-contact-link\" href=\"mailto:mateus@example.com\"><span class=\"ds-contact-icon\">@</span><span>E-mail</span><strong>mateus@example.com</strong></a>",
+      "css": ".ds-contact-link { display: grid; grid-template-columns: 22px minmax(86px, 0.28fr) 1fr; gap: 14px; align-items: center; padding: 18px; background: var(--surface, #10161d); border: 1px solid var(--line, #22303b); border-radius: var(--radius, 8px); color: var(--text, #e8edf2); font-family: Inter, system-ui, sans-serif; text-decoration: none; transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease, background-color 250ms ease; } .ds-contact-link:hover { transform: translateY(-6px); border-color: var(--accent, #35d0b5); background: rgba(53, 208, 181, 0.1); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3), 0 0 34px rgba(53, 208, 181, 0.08); } .ds-contact-link span { color: var(--muted, #9ba7b4); font-size: 0.88rem; font-weight: 700; } .ds-contact-link strong { min-width: 0; color: var(--text, #e8edf2); font-size: 0.94rem; font-weight: 600; overflow-wrap: anywhere; }"
+    },
+    {
+      "name": "Profile Panel",
+      "kind": "custom",
+      "refersTo": "profile-panel",
+      "description": "Resumo profissional compacto para a lateral do hero.",
+      "html": "<aside class=\"ds-profile-panel\"><div><span>Atuacao atual</span><strong>TRF5 - Backend, APIs e automacao</strong></div><div><span>Formacao</span><strong>Ciencia da Computacao - UNICAP</strong></div></aside>",
+      "css": ".ds-profile-panel { display: grid; gap: 1px; overflow: hidden; background: var(--line, #22303b); border: 1px solid var(--line, #22303b); border-radius: var(--radius, 8px); box-shadow: 0 18px 50px rgba(0, 0, 0, 0.26); font-family: Inter, system-ui, sans-serif; } .ds-profile-panel div { padding: 18px; background: var(--surface, #10161d); } .ds-profile-panel span { display: block; margin-bottom: 6px; color: var(--subtle, #6f7b88); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; } .ds-profile-panel strong { display: block; color: var(--text, #e8edf2); font-size: 0.96rem; line-height: 1.45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Console de Credibilidade",
+    "overview": "O sistema visual deve parecer uma interface tecnica confiavel, nao uma fantasia hacker. A base escura cria foco e maturidade; o teal funciona como sinal de acao, evidencia e progresso. A pagina precisa ajudar recrutadores e tech leads a escanear rapidamente competencia, experiencia pratica, projetos e caminhos de contato.\n\nA composicao e direta: blocos largos, grids simples, cartoes compactos e copy tecnica. A marca pode ser moderna e escura, mas nunca deve sacrificar legibilidade, clareza ou acesso aos links principais. O tom visual correto e tecnico, maduro e util.",
+    "keyCharacteristics": [
+      "Fundo escuro controlado com superficies discretas.",
+      "Teal usado como acento raro para acao, prova e orientacao.",
+      "Tipografia Inter em peso forte, sem troca decorativa de familias.",
+      "Cartoes de raio curto, bordas finas e elevacao apenas em interacao.",
+      "Motion progressivo, leve e sempre compativel com reducao de movimento."
+    ],
+    "rules": [
+      {
+        "name": "The Teal Earns Attention Rule",
+        "body": "O teal deve marcar decisao, evidencia tecnica ou estado de foco. Se tudo esta teal, nada esta importante.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark Is Quiet Rule",
+        "body": "O fundo escuro deve servir a leitura e a credibilidade. Nao transformar o portfolio em visual hacker/cyberpunk poluido.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Nao adicionar serifas, monospace ou display fonts por decoracao. A identidade atual vem de escala, peso e hierarquia, nao de troca de fonte.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Shouting Rule",
+        "body": "Display grande e permitido no hero; dentro de cards, sidebars e secoes densas, titulos devem continuar compactos e legiveis.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lift Only on Intent Rule",
+        "body": "Sombra forte so aparece como resposta de interacao ou destaque real. Cartao estatico com borda e sombra grande ao mesmo tempo vira template generico.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Quiet Evidence Rule",
+        "body": "Cards informativos, timeline e chips tecnicos ficam estaveis. Movimento e glow ficam reservados para botoes, links de contato e projetos com acao clara.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do manter o portfolio como marca pessoal tecnica: confiante, maduro e direto.",
+      "Do usar #35d0b5 para CTAs, foco, icones e pequenos sinais de prioridade.",
+      "Do preservar contraste forte em texto: text para informacao essencial, muted para descricao, subtle apenas para metadados curtos.",
+      "Do usar raio curto (8px) em cartoes, botoes e paineis; pills ficam reservadas para tags e badges.",
+      "Do manter motion leve, com prefers-reduced-motion e sem esconder conteudo essencial antes da animacao.",
+      "Do reservar hover, lift e glow para elementos clicaveis ou cards com acao evidente."
+    ],
+    "donts": [
+      "Don't deixar parecer template generico de portfolio.",
+      "Don't transformar a pagina em curriculo corporativo sem personalidade.",
+      "Don't usar visual hacker/cyberpunk poluido, neon excessivo, grid decorativo ou codigo falso como textura.",
+      "Don't criar uma vitrine visual desconectada dos projetos; cada destaque precisa provar experiencia real.",
+      "Don't usar landing page cheia de promessas vagas, copy inflada ou iconografia repetitiva sem significado.",
+      "Don't adicionar gradiente em texto, bordas laterais grossas, cards com raio acima de 16px, ou sombra grande decorativa em todo elemento.",
+      "Don't aplicar hover em chips, timeline ou paineis informativos sem clique."
+    ]
+  }
+}
