@@ -15,9 +15,10 @@ mkdirSync(screenshotDirectory, { recursive: true });
 
 const sections = [
     ["hero", "inicio"],
+    ["sobre", "sobre"],
+    ["projetos", "projetos"],
+    ["stack", "stack"],
     ["experiencia", "experiencia"],
-    ["case", "case-controle"],
-    ["competencias", "competencias"],
     ["contato", "contato"],
 ];
 const viewports = [

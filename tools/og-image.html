@@ -17,54 +17,102 @@
         }
 
         body {
-            background: #06070A;
-            color: #F4F5F7;
-            font-family: "Manrope", "Manrope Fallback", Arial, sans-serif;
+            background: #030303;
+            color: #EEEDEA;
+            font-family: "Source Sans 3", "Source Sans 3 Fallback", Arial, sans-serif;
         }
 
-        .card {
+        .frame {
             position: relative;
             display: flex;
             width: 100%;
             height: 100%;
-            align-items: center;
-            padding: 86px 92px;
-            background:
-                radial-gradient(circle at 72% 18%, rgba(124, 108, 255, 0.16), rgba(124, 108, 255, 0) 38%),
-                linear-gradient(#232834, #232834) 0 96px / 100% 1px no-repeat,
-                linear-gradient(#232834, #232834) 0 calc(100% - 98px) / 100% 1px no-repeat,
-                linear-gradient(#232834, #232834) 46px 0 / 1px 100% no-repeat,
-                linear-gradient(#232834, #232834) calc(100% - 46px) 0 / 1px 100% no-repeat,
-                #06070A;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 62px 72px 66px;
+            border: 1px solid #171717;
         }
 
-        .content { transform: translateY(18px); }
+        .frame::before,
+        .frame::after {
+            position: absolute;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: #171717;
+            content: "";
+        }
+
+        .frame::before { top: 116px; }
+        .frame::after { bottom: 112px; }
+
+        .topline,
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: "IBM Plex Mono", "IBM Plex Mono Fallback", monospace;
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .identity {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mark {
+            display: grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            border: 1px solid #2A2A2A;
+            font-size: 11px;
+        }
+
+        .role { color: #D2AE63; }
+
+        .content {
+            transform: translateY(20px);
+        }
 
         h1 {
+            max-width: 940px;
             margin: 0;
-            font-family: "Sora", "Sora Fallback", Arial, sans-serif;
+            font-family: "Archivo", "Archivo Fallback", Arial, sans-serif;
             font-size: 92px;
-            font-weight: 800;
+            font-weight: 600;
             letter-spacing: -0.055em;
-            line-height: 0.95;
+            line-height: 0.98;
         }
 
-        p {
-            margin: 24px 0 0;
-            color: #7C6CFF;
-            font-size: 43px;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-            line-height: 1;
+        .positioning {
+            margin: 30px 0 0;
+            color: #8D8981;
+            font-family: "IBM Plex Mono", "IBM Plex Mono Fallback", monospace;
+            font-size: 19px;
+            letter-spacing: 0.08em;
+        }
+
+        .footer {
+            color: #7E7B74;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <main class="card">
-        <div class="content">
-            <h1>Mateus Cardoso</h1>
-            <p>Desenvolvedor Backend Java</p>
-        </div>
+    <main class="frame">
+        <header class="topline">
+            <div class="identity"><span class="mark">MC</span><span>Mateus Cardoso</span></div>
+            <span class="role">Backend Developer</span>
+        </header>
+        <section class="content">
+            <h1>APIs que conectam regras, dados e operações.</h1>
+            <p class="positioning">Java · Python · APIs · Integrações · Dados · IA aplicada</p>
+        </section>
+        <footer class="footer"><span>Recife, Brasil</span><span>Portfólio técnico · 2026</span></footer>
     </main>
 </body>
 </html>
