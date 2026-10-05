@@ -4,9 +4,9 @@ Este diretório contém apenas os subsets latinos, variáveis e em formato WOFF2
 
 | Família | Pacote de origem | Versão | Intervalo usado | Arquivo |
 | --- | --- | --- | --- | --- |
-| Archivo | `@fontsource-variable/archivo` | 5.3.0 | 700–800 | `archivo-latin-wght-normal.woff2` |
-| Source Sans 3 | `@fontsource-variable/source-sans-3` | 5.3.0 | 400–700 | `source-sans-3-latin-wght-normal.woff2` |
-| Azeret Mono | `@fontsource-variable/azeret-mono` | 5.3.0 | 500–600 | `azeret-mono-latin-wght-normal.woff2` |
+| Sora | `@fontsource-variable/sora` | 5.3.0 | 600–700 | `sora-latin-wght-normal.woff2` |
+| Manrope | `@fontsource-variable/manrope` | 5.3.0 | 400–700 | `manrope-latin-wght-normal.woff2` |
+| JetBrains Mono | `@fontsource-variable/jetbrains-mono` | 5.3.0 | 500–600 | `jetbrains-mono-latin-wght-normal.woff2` |
 
 Os três pacotes são distribuídos sob a SIL Open Font License 1.1. As licenças e atribuições originais estão preservadas em `licenses/`.
 
